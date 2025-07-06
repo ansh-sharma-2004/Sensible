@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap </title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <!--Owl Carousel Links-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="styles.css"> 
+<style>
+
+</style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-2 fixed-top position-sticky-top" style="height: 62px;">
+    <div class="container">
+      <!-- Logo (Always Visible) -->
+      <a href="/" class="navbar-brand d-flex align-items-center me-4">
+        <img src="images/Navbar Logo.png" alt="PranaAir Logo" width="60" class="me-2">
+      </a>
+
+      <!-- Mobile Toggle Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible Content -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+        <div class="d-flex flex-column flex-lg-row align-items-end align-items-lg-center w-100 gap-3">
+
+          <!-- Center: Menu -->
+          <ul class="navbar-nav flex-column flex-lg-row gap-2 gap-lg-3 ms-auto text-center">
+            <!-- Dropdowns -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle mx-auto" href="#" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Solutions</a>
+              <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="solutionsDropdown">
+                <li><a class="dropdown-item text-center" href="#">Solution 1</a></li>
+                <li><a class="dropdown-item text-center" href="#">Solution 2</a></li>
+                <li><a class="dropdown-item text-center" href="#">Solution 3</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle mx-auto" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+              <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="productsDropdown">
+                <li><a class="dropdown-item text-center" href="#">Product 1</a></li>
+                <li><a class="dropdown-item text-center" href="#">Product 2</a></li>
+                <li><a class="dropdown-item text-center" href="#">Product 3</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle mx-auto" href="#" id="caseStudiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Case Studies</a>
+              <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="caseStudiesDropdown">
+                <li><a class="dropdown-item text-center" href="#">Case Study 1</a></li>
+                <li><a class="dropdown-item text-center" href="#">Case Study 2</a></li>
+                <li><a class="dropdown-item text-center" href="#">Case Study 3</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle mx-auto" href="#" id="knowWhatDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Know What</a>
+              <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="knowWhatDropdown">
+                <li><a class="dropdown-item text-center" href="#">Resource 1</a></li>
+                <li><a class="dropdown-item text-center" href="#">Resource 2</a></li>
+                <li><a class="dropdown-item text-center" href="#">Resource 3</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle mx-auto" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+              <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="aboutDropdown">
+                <li><a class="dropdown-item text-center" href="#">About Us</a></li>
+                <li><a class="dropdown-item text-center" href="#">Team</a></li>
+                <li><a class="dropdown-item text-center" href="#">Careers</a></li>
+              </ul>
+            </li>
+
+            <!-- Right: Buttons and Dropdowns -->
+            <li class="mt-2 mt-lg-0 mx-auto">
+              <a href="#getintouch" class="btn btn-success rounded-pill px-4" style="width: 140px;">Get in touch</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle d-flex align-items-center justify-content-center" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-globe me-1"></i> Global
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item text-center" href="#">English</a></li>
+                <li><a class="dropdown-item text-center" href="#">Spanish</a></li>
+                <li><a class="dropdown-item text-center" href="#">French</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-center" href="#" id="currencyDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">USD ($)</a>
+              <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="currencyDropdown">
+                <li><a class="dropdown-item text-center" href="#">USD ($)</a></li>
+                <li><a class="dropdown-item text-center" href="#">EUR (€)</a></li>
+                <li><a class="dropdown-item text-center" href="#">GBP (£)</a></li>
+              </ul>
+            </li>
+            <!--Shopping Cart Icon-->
+            <li class="mx-auto my-auto">
+              <a href="#" class="position-relative">
+                <i class="bi bi-cart3 fs-5"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">0</span>
+              </a>  
+            </li>
+            <li class="mx-auto my-auto">
+              <a href="#" class="text-decoration-none text-success">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<div class="layered-container">
+    <!-- Desktop Version (lg and up) -->
+    <div class="desktop-version d-none d-lg-block">
+        <div class="background-layer">
+        </div>
+        <div class="gradient-overlay">
+        </div>
+        <div class="content-layer">
+            <div class="container-fluid">
+                <div class="row h-100">
+                    <div class="col-lg-6">
+                        <div class="text-content p-4 ms-5 w-75">
+                            <h1>Sensible+<br>Air Monitor</h1>
+                            <p>An intelligent, portable indoor air monitor that helps you stay informed about the air you breathe.</p>
+                            <p class="price">₹69,990.00</p>
+                            <a href="#" class="btn btn-success rounded-pill px-4">Buy Now</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tablet & Mobile Version (md and below) -->
+    <div class="mobile-tablet-version d-block d-lg-none">
+        <div class="background-layer-mobile">
+        </div>
+        <div class="gradient-overlay-mobile">
+        </div>
+        <div class="content-layer-mobile">
+            <div class="container-fluid">
+                <div class="text-content-mobile d-flex flex-column align-items-center">
+                    <h1>A handy little indoor air monitor that's super smart!</h1>
+                    <p>Keep track of indoor air quality along-with ambient indoor & outdoor pollutant</p>
+                    <p class="price">₹69,990.00</p>
+                    <a href="#" class="btn btn-success rounded-pill px-4">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Footer bar-->
+    <section class="container-fluid desktop d-md-block d-none " style="height: 61px;">
+            <div class="row"style="height: 61px;">
+                <div class="col-md-6 " style="background-color:  #7AB261;  ">
+                    <div class="d-flex align-items-center justify-content-center text-white gap-3" style="height: 61px; width: 100%;">
+                        <img src="images/sensible + 2.png" alt="icon" style="width: 75px; height: 45px;">
+                        <span>Sensible+</span>
+                        <div style="background:linear gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)),";>
+                          <img src="images/Rectangle 34628110.png" alt="icon" 
+                          style="width: 1px; height: 39px; display: flex;"> 
+                        </div>
+                        <div >
+                          ₹59,990.00
+                        </div>
+                        <div class="h-32px w-32px d-flex">    
+                          <img src="images/Diagonal Arrow.png" alt="icon" style="width: auto; height: auto;">
+                        </div>                    
+                    </div>
+
+                </div>
+                <div class="col-md-6"style="background-color: #6C81A352; ">
+                    <div class="d-flex align-items-center justify-content-center text-[#263D4FCC] gap-3" style="height: 61px; width: 100%; margin: left 165px; ;">
+                          <img src="images/Sensible+ fr.png" alt="icon" style="width: 75px; height: 45px;">
+                          <span style="color: rgba(38, 61, 79, 0.8);">Sensible+</span>
+                        <div style="background: gradient(bottom, rgba(38, 61, 79, 0), rgba(38, 61, 79, 1), rgba(38, 61, 79, 0)),">
+                          <img src="images/Rectangle 34628110.png" alt="icon" 
+                          style="width: 1px; height: 39px; display: flex; 
+                          ">
+                        </div>
+                        <div >
+                          ₹69,990.00
+                        </div>  
+                        <div class="h-auto w-auto ">    
+                            <img src="images/Black Diagonal Arrow.png" alt="icon" style="  width: 29px; height: 29px;">
+                      </div>                    
+                    </div>
+                </div>
+            </div>
+    </section>
+
+<!--Frame 2-->    
+<div class="container py-5">
+  <!--Desktop Heading -->
+  <div class="desktop-text d-none d-md-block">
+    <h2 class="fw-medium mb-4 " style=" max-width: 30%;  font-family: 'Nunito Sans', sans-serif; font-size: 2.5rem; line-height: 1.2;">
+      What Makes Sensible+ Smart
+    </h2>
+  </div>
+<!--Mobile Heading-->
+  <div class="mobile-text d-block d-md-none">
+    <h2 class="fw-medium p-4" style="width:80%; font-family: 'Nunito Sans', sans-serif; font-size: 2rem; line-height: 1.2; ">
+      Features about the air monitor
+    </h2>
+  </div>
+
+  <div class="row g-0 align-items-stretch mb-0">
+    <div class="col-lg-6 bg-light p-4 d-flex flex-column flex-md-row align-items-center ">
+      <div>
+        <img src="images/Sensible+ frr.png" class="img-fluid sensible+frr mb-md-0 pe-md-3" alt="Sensible+">
+      </div>
+      <div class="text-center text-md-start">
+        <p class="fw-bold gradient-text" style="font-size: 1.75rem; color: #263D4F; font-family: 'Nunito Sans', sans-serif;">Sensible + Advance</p>
+        <a href="#">
+          <img src="images/Group 427327218.png" alt="Buy Now" class="img-fluid" style="max-width: 180px;">
+        </a>
+      </div>
+    </div>
+
+    <div class="col-6   col-lg-3">
+      <div class="bg-light h-100 p-3 border rounded d-flex flex-column">
+        <img src="images/Group.png" class="mb-3 feature-icon" alt="Real-Time Data">
+        <h5 class="fw-semibold" style="color: #263D4F; font-family: 'Nunito Sans', sans-serif;">Real-Time Data</h5>
+        <p class="text-muted" style="font-family: 'Open Sans', sans-serif;">Track real-time air quality hourly, weekly, and monthly.</p>
+      </div>
+    </div>
+
+    <div class="col-6 col-lg-3">
+      <div class="bg-light h-100 p-3 border rounded d-flex flex-column">
+        <img src="images/Group 2.png" class="mb-3 feature-icon" alt="Battery">
+        <h5 class="fw-semibold" style="color: #263D4F; font-family: 'Nunito Sans', sans-serif;">5000 mAh Inbuilt Battery</h5>
+        <p class="text-muted" style="font-family: 'Open Sans', sans-serif;">Long battery life for long and reliable screen time.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-0 mb-0">
+    <div class="col-6 col-lg-3">
+      <div class="bg-light h-100 p-3 border rounded d-flex flex-column">
+        <img src="images/Group 3.png" class="mb-3 feature-icon" alt="Micro SD">
+        <h5 class="fw-semibold" style="color: #263D4F; font-family: 'Nunito Sans', sans-serif;">On-board Micro SD Card</h5>
+        <p class="text-muted" style="font-family: 'Open Sans', sans-serif;">Automatically logs and stores data locally on a MicroSD card.</p>
+      </div>
+    </div>
+
+    <div class="col-6 col-lg-3">
+      <div class="bg-light h-100 p-3 border rounded d-flex flex-column">
+        <img src="images/Group 4.png" class="mb-3 feature-icon" alt="Touch Screen">
+        <h5 class="fw-semibold" style="color: #263D4F; font-family: 'Nunito Sans', sans-serif;">7 inch Touch Screen</h5>
+        <p class="text-muted" style="font-family: 'Open Sans', sans-serif;">A bright and responsive display for smarter interaction.</p>
+      </div>
+    </div>
+
+    <div class="col-6 col-lg-3">
+      <div class="bg-light h-100 p-3 border rounded d-flex flex-column">
+        <img src="images/Group 5.png" class="mb-3 feature-icon" alt="Charging">
+        <h5 class="fw-semibold" style="color: #263D4F; font-family: 'Nunito Sans', sans-serif;">Micro USB Charging</h5>
+        <p class="text-muted" style="font-family: 'Open Sans', sans-serif;">Comes with a Type-C cable for faster, more efficient charging.</p>
+      </div>
+    </div>
+
+    <div class="col-6 col-lg-3">
+      <div class="bg-light h-100 p-3 border rounded d-flex flex-column">
+        <img src="images/Group 6.png" class="mb-3 feature-icon" alt="WiFi">
+        <h5 class="fw-semibold" style="color: #263D4F; font-family: 'Nunito Sans', sans-serif;">WiFi Connectivity</h5>
+        <p class="text-muted" style="font-family: 'Open Sans', sans-serif;">Ensure continuous smooth air quality data transmission anytime.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Frame 3-->
+
+<div class="container my-5 py-5 ">
+  <div class="px-3 px-md-5 py-5 rounded" style="background-color: rgba(231, 236, 242, 1);">
+  <div class="row align-items-center flex-column-reverse flex-md-row">
+    <div class="col-md-6 mb-4 mb-md-0 d-flex flex-column">
+      <h2 class="fw-medium mb-3 fs-3" style="font-family: 'Nunito Sans', sans-serif; font-size: 1.75rem; line-height: 1.3; max-width: 70%; text-align: left;">
+        What Technology is Used in Sensible+?
+      </h2>
+      <div class="d-block d-md-none mb-3">
+        <img src="images/image 609.png" class="img-fluid" style="max-width: 100%; mix-blend-mode: multiply;" alt="Technology Illustration">
+      </div>
+      <p class="text-muted" style="font-family: 'Open Sans', sans-serif; font-size: 1rem; line-height: 1.5; max-width: 90%; text-align: left;">
+        Sensible+ uses advanced sensor technologies like electrochemical, catalytic, optical (NDIR, PID, metal oxide semiconductors), and spectroscopy to provide accurate, real-time air quality data. These technologies work in harmony to ensure that the data you receive is both reliable and actionable, helping you maintain cleaner, healthier indoor air.
+      </p>
+    </div>
+    <div class="col-md-6 mb-4 mb-md-0 d-none d-md-block">
+      <img src="images/image 609.png" class="img-fluid" style="max-width: 100%; mix-blend-mode: multiply;" alt="Technology Illustration">
+    </div>
+  </div>
+</div>
+</div>
+  
+  <!--Frame 4-->  
+<div class="container-fluid h-auto w-auto mb-0 p-0">
+  <div class="row g-0 flex-column flex-md-row ">
+    <!-- Tablet Image Column -->
+    <div class="col-12 col-md-7 order-1 order-md-2">
+      <div  style="position: relative; overflow: hidden;">
+        <!--Desktop Image-->
+        <div class="desktop d-none d-md-block">
+          <img src="images/sensible+ ad.png" alt="Device" style="width: 100%; height: auto;">
+        </div>
+        <!--Mobile Div-->
+        <div class="col-12 col-md-5 mobile d-block d-md-none" style="background-color: rgba(10, 21, 6, 1);">
+        <div class="position-relative">  
+          <div class="mx-auto text-white " 
+          style=" position: absolute; left: 10%; margin-top: 13%;">
+            <h2>
+              <span style="color: rgba(122, 178, 97, 1);">Parameters</span> Sensible+ Measures for You
+            </h2>
+          </div>
+        </div>
+          <!--Mobile Image-->
+        <div class="mobile d-block d-md-none" style="background-color: rgba(10, 21, 6, 1);">
+          <img src="images/nknj 1.png" alt="Device" style="width: 98%; height: auto; padding-right: 2%;">
+        </div>
+        </div>
+        <!-- Gradient Overlay -->
+        <div class="desktop d-none d-md-block" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;
+          background: radial-gradient(ellipse at center, transparent 0%, rgba(10, 21, 6, 1) 100%)">
+        </div>
+         
+
+        <!-- Floating Button -->
+        <!--Desktop button-->
+        <div class="desktop d-none d-md-block">
+        <a href="#" style="position: absolute; top: 15%; right: 20%;">
+          <img src="images/Group 427327217.png" alt="Buy">
+        </a>
+        </div>  
+        <!--Mobile button-->
+        <div class="mobile d-block d-md-none d-flex justify-content-center">
+        <a href="#" style="position: absolute; bottom: 15%;">
+          <img src="images/Group 427327224 (1).png" alt="Buy">
+        </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tablet Text Column -->
+     <div class="col-12 col-md-5 order-2 order-md-1 pb-5  " style="background-color: rgba(10, 21, 6, 1);">
+      <div class="my-5 p-5 text-white desktop-text d-none d-md-block">
+        <h2>
+          <span style="color: rgba(122, 178, 97, 1);">Parameters</span> Sensible+ <br> Measures for You
+        </h2>
+      </div>
+
+        <!-- Responsive List -->
+      <div>
+          <ul class="frame4ul">
+            <!-- Each List Item -->
+            <li class="frame4border frame4li" > 
+              <div>    
+                <img src="images/PARTICLE COUNT (0.5).svg" alt="PM Icon" class="frame4icon">
+              </div>
+              <div class="text-white">
+                Particulate Matter<br>(PM1, PM10, PM2.5)
+              </div>
+            </li>
+
+            <li class="frame4border frame4li">
+              <div>    
+                <img src="images/CO2.png" alt="PM Icon" class="frame4icon">
+              </div>
+              <div class="text-white">
+                Carbon Di-<br>Oxide (CO2)
+              </div>
+            </li>
+
+            <li class="frame4border frame4li"> 
+              <div>    
+                <img src="images/TVOC.svg" alt="PM Icon" class="frame4icon">
+              </div>
+              <div class="text-white">
+                Total Volatile Organic <br> Compounds(TVOC)
+              </div>
+            </li>
+
+            <li class="frame4border frame4li"> 
+              <div>    
+                <img src="images/HCHO.png" alt="PM Icon" class="frame4icon">
+              </div>
+              <div class="text-white">
+                Formaldehyde<br> (HCHO)
+              </div>
+            </li>
+
+            <li class=" frame4li frame4border"> 
+              <div>    
+                <img src="images/TEMPERATURE.png" alt="PM Icon" class="frame4icon">
+              </div>
+              <div class="text-white">
+                Temperature
+              </div>
+            </li>
+
+            <li class="frame4li frame4border"> 
+              <div>    
+                <img src="images/Humidity.png" alt="PM Icon" class="frame4icon">
+              </div>
+              <div class="text-white">
+                Humidity
+              </div>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Frame 5 -->
+   <div class="frame5div">
+
+  <!-- Background image div -->
+    <div class="frame5bg"> 
+    </div>
+
+    <!-- Gradient overlay div -->
+    <div class="frame5gradient">
+    </div>
+
+    <div class="frame5content">
+      <!-- Desktop text -->
+      <p class="frame5text desktop-text d-none d-md-block">
+          Monitor What Matters. Breathe Better with Sensible+.
+      </p>
+      <!-- Mobile Text -->
+      <p class="frame5text mobile-text d-block d-md-none">
+          Smallest, Affordable & Portable Air Quality Monitor
+      </p>
+
+      <div>
+          <a href="#" >
+              <img src="images/Group 427327224 (1).png" alt="Buy">
+          </a>
+      </div>
+      </div>
+    </div>
+
+
+
+  <!--Frame 6-->
+  <div class="container frame6div frame6border" >
+      <div class="row">
+          <!--Left Text-->
+          <!--Desktop col-->
+          <div class="col-md-4 frame6border d-flex flex-column justify-content-center align-items-center 
+                      border border-0 border-end desktop d-none d-md-block">
+                  <h2 class="frame6heading">
+                    How Accurate is the Sensible+ Monitor?
+                  </h2>
+                  <div class="frame6text">
+                    <p>
+                        Sensible+ delivers high-precision readings using advanced sensors calibrated against industry standards.
+                    </p>
+                  </div>
+          </div>
+          <!--Mobile col-->
+          <div class="col-md-4 frame6border d-flex flex-column justify-content-center align-items-center 
+                      border border-0  mobile d-block d-md-none">
+              <h2 class="frame6heading">
+                How Accurate is the Sensible+ Monitor?
+              </h2>
+              <div class="frame6text">
+                <p>
+                  Comparison of our Sensible Monitor with other high-cost pollution monitors in real-time.
+                </p>
+                
+              </div>
+          </div>
+          <!--Right Images-->
+          <!-- desktop images -->
+          <div class="desktop d-none d-md-block  col-md-8 p-0 ">
+            <div class="frame6right ">
+                <img src="images/Figure → prana air sensible monitor data comparision.png" alt="Image 1" class="frame6image">
+                <img src="images/Figure → prana air sensible monitor data accuracy.png" alt="Image 2" class="frame6image">
+                <img src="images/Figure → prana air sensible monitor data comparision.png" alt="Image 3" class="frame6image">
+                <a href="#">
+                    <img src="images/Figure → prana air sensible monitor accuracy check (1).png" alt="Link" class="frame6image ">
+                </a>
+            </div>
+          </div>
+          <div class=" mobile d-block d-md-none col-md-8">
+            <div class="frame6right">
+                <img src="images/Figure → prana air sensible monitor data accuracy (1).png" alt="Image 1" class="frame6image">
+                <img src="images/Figure → prana air sensible monitor data comparision (1).png" alt="Image 2" class="frame6image">
+                <img src="images/Figure → prana air sensible monitor accuracy check (2).png" alt="Image 3" class="frame6image">
+                <a href="#">
+                    <img src="images/Figure → prana air sensible monitor accuracy check (3).png" alt="Link" class="frame6image">
+                </a>
+            </div>
+
+          </div>
+
+      </div>
+  </div>
+
+
+  <!-- Frame 7-->    
+  <div class="container h-auto frame7border" >
+      <p class="frame7heading text-start w-75">
+          Sensible+ Delivers BAM-Level Accuracy
+      
+      <!--Graph-->
+      <div class="px-2 pb-5">
+          <img src="images/Group 427327193.png" alt="Graph" style="width: 100%; height: auto;">
+      </div>
+  </div>
+
+
+  <!--Frame 8-->
+<div class="container position-relative frame8border">
+  <h3 class="w-auto text-muted px-5 mt-5">
+    Highly Accurate <br>Prana Air Monitor
+  </h3>
+
+  <div class="position-relative m-5" style="max-width: 100%; overflow: hidden;">
+    <img src="images/Sensible+ at workplace.png" alt="Cup"  class="desktop d-none d-md-block frame8image" >
+    <img src="images/Group 427327225.png" alt="Cup" class="mobile d-block d-md-none frame8image" >
+    <div class="image_gardient">
+    </div>
+    <div class="frame8play">  
+      <a href="#">
+        <img src="images/Group 427327222.png" alt="">
+      </a>
+    </div>
+  </div>
+</div>
+
+<!--Frame 9-->
+<div class="container h-auto my-5 desktop d-none d-md-block" style="background-color: rgba(244, 248, 254, 1);">
+  <div class="row py-2">
+  <!--Left Columns with text-->
+    <div class="col-md-6 bg-light my-5 d-flex justify-content-center align-items-center bg-transparent" >
+      <div class="w-50 bg-transparent" >
+        <h2>
+          <span style="border: 0.5px solid rgba(122, 178, 97, 1); border-radius: 15px; background-color: #7AB26121; "> 
+            Indoor Air 
+          </span> 
+          <br> 
+          Pollution Sensors
+        </h2>
+        <p>
+          Sensible+ delivers high-precision readings using advanced sensors calibrated against industry standards. 
+        </p>
+        <a href="#">
+          <img src="images/Group 427327219.png" alt="Buy Now">
+        </a>
+      </div>
+    </div>
+    <!--carousel column-->
+    <div class="col-md-6" style="max-width: 580px; max-height: 380px;">
+        <!-- Carousel -->
+      <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators/dots
+        <div class="carousel-indicators" style="bottom: -5%;">
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>-->
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner" style="margin-top: -50px;">
+          <div class="carousel-item active">
+            <img src="images/sensible angle 1.png" alt="Sensible angle 1" class="d-block w-100 img-fluid" style="object-fit: contain;">
+          </div>
+          <div class="carousel-item">
+            <img src="images/sensible angle 2.png" alt="Sensible angle 2" class="d-block w-100 img-fluid" style="object-fit: contain;">
+          </div>
+          <div class="carousel-item">
+            <img src="images/sensible angle 3.png" alt="Sensible angle 3" class="d-block w-100 img-fluid" style="object-fit: contain;">
+          </div>
+          <div class="carousel-item">
+            <img src="images/sensible angle 4.png" alt="Sensible angle 4" class="d-block w-100 img-fluid" style="object-fit: contain;">
+          </div>
+        </div>
+
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev" 
+        style="left:40%; max-width: 3rem; margin-top: 22rem;    max-height: 3rem;">
+          <span><img src="images/Group 427327244.png" alt="left arrow"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next" 
+        style="right: 40%; max-width: 3rem; margin-top: 22rem;    max-height: 3rem;">
+          <span><img src="images/Group 427327212.png" alt="right arrow"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div> 
+
+<!--Frame 10-->
+<div>
+<div class="container">    
+        <!-- Nav tabs -->
+    <ul class="nav nav-tabs custom-tabs frame10list  border-0">
+      <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="tab" href="#1">AQI App</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#2">Dashboard</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#3">AQI TV</a>
+      </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content m-0">
+
+    <!--Image 1-->
+    <!-- Desktop -->
+    <div class="tab-pane container active" id="1">
+        <div class="position-relative my-5" style="max-width: 100%; overflow: hidden; ">
+        <!-- desktop -->
+          <img src="images/sensible + 6.png" alt="Cup" style="width: 100%; height: auto; display: block; border-radius: .75rem">
+        <!-- Mobile   -->
+          <!-- <img src="images/bkhj 1.png" alt="Cap" class="mobile d-block d-md-none" style="width: 100%; height: auto; display: block;"> -->
+          <!-- gradient -->
+        <div class="frame10gradient"> 
+        </div>
+
+        <div class="frame10text">
+            <p>
+                Smart Air Monitoring in Your Pocket – Real-Time Data, Anytime.
+            </p>
+            <div class="mt-4 desktop d-none d-md-block">
+                <a href="#">
+                    <img src="images/Group 427324343.svg" alt="App Store">
+                </a>
+                <a href="#" class="ms-2">
+                    <img src="images/Group 427324345.svg" alt="Play Store">
+                </a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!--Image 2-->
+    <div class="tab-pane container fade" id="2">
+        <div class="position-relative my-5" style="max-width: 100%; overflow: hidden;">
+            <img src="images/sensible + 7.png" alt="Cup" style="width: 100%; height: auto; display: block; border-radius: .75rem">
+            <!-- gradient -->
+            <div class="frame10gradient">
+            </div>
+            <div class="frame10text">
+            <p>
+            Stay Ahead of Air <br> Pollution – Access Device Data on the Dashboard.
+            </p>
+            <div class="mt-4 desktop d-none d-md-block">
+                <a href="#">
+                    <img src="images/Group 427327235.png" alt="AQI">
+                </a>
+            </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!--Image 3-->
+    <div class="tab-pane container fade" id="3">
+        <div class="position-relative my-5" style="max-width: 100%; overflow: hidden;">
+            <img src="images/sensible + 8.png" alt="Cup" style="width: 100%; height: auto; display: block; border-radius: .75rem">
+            <!-- gradient -->
+            <div class="frame10gradient">
+            </div>
+
+            <div class="frame10text">
+            <p>
+                Breathe Better, Watch Smarter – Stream Real-Time Data on AQI TV.
+            </p>
+            <div class="mt-4 desktop d-none d-md-block">
+                <a href="#">
+                    <img src="images/Group 427327234.png" alt="AQI TV">
+                </a>
+            </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</div>
+</div>
+
+<!--Frame 11-->
+<div class="container">
+    <div class="mb-5">
+  <h1>Solution <br> Applications</h1>
+</div>
+
+<div class="owl-carousel owl-theme">
+  
+  <!--Cards -->
+
+    <!--card 1-->
+    <div class=" item card border-0" style="width:100%">
+    <img class="card-img-top rounded" src="images/card1.png" alt="Card image">
+    <div class="card-body ps-0 text-muted">
+      <h4 class="card-title">Offices & Workspaces</h4>
+      <p class="card-text">
+        Use the air quality monitor to know the indoor pollution level in the office and keep your employees safe from breathing polluted air particles.
+      </p>
+    </div>
+    </div>
+    <!--card 2-->
+    <div class=" item card border-0" style="width:100%">
+    <img class="card-img-top rounded" src="images/card2.png" alt="Card image">
+    <div class="card-body ps-0 text-muted">
+      <h4 class="card-title">Hospitals & Clinics</h4>
+      <p class="card-text">
+        This is one of the most important places where the authorities need to take care very seriously. 
+        Through a good air quality monitor, it will be easily understood air pollution levels.
+      </p>
+    </div>
+    </div>
+
+    <!--card 3-->
+    <div class=" item card border-0" style="width:100%">
+    <img class="card-img-top rounded" src="images/card3.png" alt="Card image">
+    <div class="card-body ps-0 text-muted">
+      <h4 class="card-title">Hotels & Hospitality</h4>
+      <p class="card-text">
+        Many visitors come every day to stay a night at the hotel. 
+        It is important to make sure that the premise is a very clean environment and make comfort for the visitors.
+      </p>
+    </div>
+    </div>
+
+      <!--card 4-->
+    <div class=" item card border-0" style="width:100%">
+    <img class="card-img-top rounded" src="images/card4.png" alt="Card image">
+    <div class="card-body ps-0 text-muted">
+      <h4 class="card-title">
+        Home and Apartment
+      </h4>
+      <p class="card-text">
+        Safety is the main priority in factories where the workers use very harmful machines and tools. 
+        There is a very high chance of high pollution level. 
+        With a pollution device, it is very easy to understand the level of air quality at the factory.
+      </p>
+    </div>
+    </div>
+
+      <!--card 5-->
+    <div class=" item card border-0" style="width:100%">
+    <img class="card-img-top rounded" src="images/card5.png" alt="Card image">
+    <div class="card-body ps-0 text-muted">
+      <h4 class="card-title">
+        Schools & Educational Institutes
+      </h4>
+      <p class="card-text">
+        Create a safe learning environment by monitoring pollutants that affect focus and well-being.
+      </p>
+    </div>
+    </div>
+
+      <!--card 6-->
+    <div class=" item card border-0" style="width:100%">
+    <img class="card-img-top rounded" src="images/card6.png" alt="Card image">
+    <div class="card-body ps-0 text-muted">
+      <h4 class="card-title">
+        Gyms & Fitness Centers
+      </h4>
+      <p class="card-text">
+        Monitor CO₂ and ventilation efficiency to support clean air during physical activities.
+      </p>
+    </div>
+    </div>
+
+      <!--card 7-->
+    <div class=" item card border-0" style="width:100%">
+    <img class="card-img-top rounded" src="images/card7.png" alt="Card image">
+    <div class="card-body ps-0 text-muted">
+      <h4 class="card-title">
+        Retail Stores & Showrooms
+      </h4>
+      <p class="card-text">
+        Provide a safer shopping experience by monitoring and improving indoor air quality.
+      </p>
+    </div>
+    </div>
+
+      <!--card 8-->
+    <div class=" item card border-0" style="width:100%">
+    <img class="card-img-top rounded" src="images/card8.png" alt="Card image">
+    <div class="card-body ps-0 text-muted">
+      <h4 class="card-title">
+        Labs & Research Centers
+      </h4>
+      <p class="card-text">
+        Maintain controlled air quality conditions essential for sensitive experiments and equipment.
+      </p>
+    </div>
+    </div>
+
+</div>
+</div>
+
+<!--Frame 12-->
+<div class="container py-5 mt-5">
+        <!-- Header Section -->
+          <div class="row mb-4">
+              <div class="col-md-6">
+                  <h2 class="fw-normal">Technical <br>Specifications</h2>
+              </div>
+              <div class="col-md-6 frame12div gap-3">
+                  <a href="https://example.com/brochure.pdf">
+                      <img src="images/Group 427327204.png" alt="Brochure" class="img-fluid frame12icon"> 
+                  </a>
+                  <a href="https://example.com/manual.pdf" >
+                      <img src="images/Group 427327207.png" alt="Manual" class="img-fluid frame12icon">
+                  </a>
+              </div>
+          </div>       
+        <!-- Specifications Table -->
+        <div class="bg-white rounded-3">
+            <div class="row g-0 overflow-x-auto frame12 ">
+                <!-- Row 1 -->
+                <!-- BG-MD-LIGHT doesnt work  -->
+                <!-- bg-light means light color on all screens  -->
+                   <!-- bg-md-white means bg colour will be white on medium adn large screens -->
+                    <!-- This creates a zebra effect on the table -->
+                <div class="col-4 p-2 bg-light bg-md-light rounded-start-2 ">  
+                    <div class="d-flex">
+                        <span class="text-secondary">Product Name :</span>
+                        <span class="ms-2">Sensible +</span>
+                    </div>
+                </div>
+                <div class="col-4 p-2 bg-white bg-md-light ">
+                    <div class="d-flex">
+                        <span class="text-secondary">Operating Temperature:</span>
+                        <span class="ms-2">5°C to 50°C [40°F to 122°F]</span>
+                    </div>
+                </div>
+                <div class="col-4 p-2 bg-light bg-md-light rounded-end-2 ">
+                    <div class="d-flex">
+                        <span class="text-secondary ">Dimension :</span>
+                        <span class="ms-2">185 x 30 x 110 mm</span>
+                    </div>
+                </div>
+                <!-- Row 2 -->
+                <div class="col-4 p-2 bg-white bg-md-light ">
+                    <div class="d-flex">
+                        <span class="text-secondary ">Storage temperature:</span>
+                        <span class="ms-2">-20°C to 60°C [-4° to 140°F]</span>
+                    </div>
+                </div>
+                <div class="col-4 p-2 bg-light bg-md-light">
+                    <div class="d-flex">
+                        <span class="text-secondary ">Weight:</span>
+                        <span class="ms-2">475 gram</span>
+                    </div>
+                </div>
+                <div class="col-4 p-2 bg-white bg-md-light ">
+                    <div class="d-flex">
+                        <span class="text-secondary ">Display:</span>
+                        <span class="ms-2">7 Inch Color LED Touch</span>
+                    </div>
+                </div>
+                <!-- Row 3 -->
+                <div class="col-4 p-2 bg-light bg-md-light rounded-start-2">
+                    <div class="d-flex">
+                        <span class="text-secondary ">Power Supply:</span>
+                        <span class="ms-2">5V DC</span>
+                    </div>
+                </div>
+                <div class="col-4 p-2 bg-white bg-md-light">
+                    <div class="d-flex">
+                        <span class="text-secondary">Connectivity:</span>
+                        <span class="ms-2">WiFi [2.4GHz]</span>
+                    </div>
+                </div>
+                <div class="col-4 p-2 bg-light bg-md-light rounded-end-2">
+                    <div class="d-flex">
+                        <span class="text-secondary">Mobile App:</span>
+                        <span class="ms-2">AQI India [iOS & android]</span>
+                    </div>
+                </div>
+                <!-- Row 4 -->
+                <div class="col-4 p-2 bg-white bg-md-white">
+                    <div class="d-flex ">
+                        <span class="text-secondary">Battery:</span>
+                        <span class="ms-2">5000 mAh rechargeable battery</span>
+                    </div>
+                </div>
+                <div class="col-4 p-2 bg-light bg-md-white d-none ">
+                </div>
+                <div class="col-4 p-2 bg-white bg-md-white d-none ">
+                </div>
+            </div>
+        </div>
+
+        <!-- Certification Icons -->
+        <div class="d-flex justify-content-end gap-3 mt-4">
+            <img src="images/Conformité_Européenne_(logo) (1) 1.png" alt="CE" height="24">
+            <img src="images/FCC_New_Logo 1.png" alt="FC" height="24">
+        </div>
+</div>
+
+<!--Frame 13-->
+<div class="container-fluid p-5 pb-0 bg-dark-green mb-5 desktop d-none d-md-block">
+        <div class="row align-items-center">
+            <!-- Left Column - Text Content -->
+            <div class="col-md-4 text-white">
+                <h2 class="mb-4 fw-normal">How Accurate is the<br>Sensible+ Monitor?</h2>
+                <p class="fw-light">
+                    Sensible+ delivers high-precision readings using advanced sensors calibrated against industry standards.
+                </p>
+            </div>
+            
+            <!-- Right Column - Device Image with Labels -->
+            <div class="col-md-8">
+                <!--Image 'background'-->
+                <div class="position-relative">
+                    <div class="d-flex justify-content-center">
+                        <img src="images/sensible + 12.png" class="img-fluid">
+                    </div>
+                <!--Overlay--> 
+                <div class="position-absolute top-0 start-0 w-100 h-100"> 
+                    <!-- style="background-color: rgba(0,0,0,0.1);" -->
+                    
+                    <div class="position-relative w-100 h-100">
+                        <!--Label 1-->
+                        <div class=" position-absolute text-white" 
+                            style="top: 42%; left: 21%;">
+                            <div style="margin-left: -20%; max-width: 130px;">
+                                <h5>
+                                    5V DC Type-C Power supply
+                                </h5>
+                            </div>
+                            <img src="images/Vector 1.png" alt="Vector 1" class="img-fluid">
+                        </div> 
+                        <!--Label 2-->
+                        <div class=" position-absolute text-white" 
+                            style="top: 30%; left: 54%;">
+                            <div style="margin-left: 84%; max-width: 130px;">
+                                <h5>
+                                    ON/OFF Switch
+                                </h5>
+                            </div>
+                            <img src="images/Vector 2.png" alt="Vector 2" class="img-fluid">
+                        </div>
+                        <!--Label 3-->
+                        <div class=" position-absolute text-white" 
+                            style="top: 70%; left: 16%;">
+                            <div style="margin-left: -20%; max-width: 130px;">
+                                <h5>
+                                    Air Inlet
+                                </h5>
+                            </div>
+                            <img src="images/Vector 3.png" alt="Vector 3" class="img-fluid">
+                        </div>
+                        <!--Label 4-->
+                        <div class=" position-absolute text-white" 
+                            style="top: 60%; left: 70%;">
+                            <div style="max-width: 200px;">
+                                <h5>
+                                    Micro SD Card slot
+                                </h5>
+                            </div>
+                            <img src="images/Vector 4.png" alt="Vector 4" class="img-fluid" style="margin-left: -80%;">
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+        </div>
+</div>
+
+<!--Frame 14-->
+<section id="getintouch" class="custom-height" style="position: relative;  margin-top: 15%;">
+        <div class="bg-light py-5" 
+        style=" 
+        width:100%; 
+        height: 53%; 
+        position: absolute; 
+        top: 0; 
+        left: 0;
+        z-index: 0; 
+        background-color: #F7FDF4;">
+        </div>      
+        <div class="container text-center z-index-2 position-relative pt-5">
+                <h1 class="fw-medium fs-1 mb-2">Get In Touch</h1>
+                <p class="fw-medium mb-5">Please help us know what requirements you have.<br> Our team will contact you very soon.</p>
+        </div>
+
+        <div class="container position-relative" style="margin-top: 0%">
+            <div class="row justify-content-center">
+                <div class="col-xl-10">
+                    <div class="card shadow border">
+                        <div class="row g-0">
+                            <!-- Left Sidebar - Contact Information -->
+                            <div class="col-md-4 bg-custom-green text-white p-4 position-relative overflow-hidden">
+                                <!-- Decorative circles -->
+                                <div class="position-absolute bottom-0 end-0 translate-middle-y rounded-circle opacity-30 bg-custom-green" style="width: 128px; height: 128px; right: -64px;"></div>
+                                <div class="position-absolute top-0 start-0 translate-middle rounded-circle opacity-30 bg-custom-green" style="width: 80px; height: 80px; left: -40px;"></div>
+                                
+                                <div class="position-relative">
+                                    <h2 class="fs-4 fw-bold mb-4">Contact Information</h2>
+                                    <p class="mb-4 text-white-50">Looking for the air quality solutions for banks?</p>
+                                    
+                                    <div class="d-flex flex-column gap-4">
+                                        <!-- Phone Number -->
+                                        <div class="d-flex align-items-start gap-3">
+                                            <div class="contact-icon-bg p-2 rounded-circle">
+                                                <svg class="bi bi-telephone" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+                                                    <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <p class="text-white-50 mb-1">Phone Number:</p>
+                                                <p class="fw-medium mb-0">(+91) 73918-73918</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Email -->
+                                        <div class="d-flex align-items-start gap-3">
+                                            <div class="contact-icon-bg p-2 rounded-circle">
+                                                <svg class="bi bi-envelope" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+                                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.708 2.825L15 11.105V5.383zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741zM1 11.105l4.708-2.897L1 5.383v5.722z"/>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <p class="fw-medium mb-1">info@purelogic.in</p>
+                                                <p class="fw-medium mb-0">contact@purelogic.in</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Address -->
+                                        <div class="d-flex align-items-start gap-3">
+                                            <div class="contact-icon-bg p-2 rounded-circle">
+                                                <svg class="bi bi-geo-alt" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+                                                    <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                                                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <p class="fw-medium mb-1">706, 7th Floor, Sec 10,</p>
+                                                <p class="fw-medium mb-0">Rohini, Delhi 85, India</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Side - Form -->
+                            <div class="col-md-8 bg-white p-4">
+                                <form>
+                                    <div class="mb-4">
+                                        <label class="form-label fw-medium text-secondary">Your Full Name</label>
+                                        <input type="text" class="form-control" placeholder="John Trangley Windsor">
+                                    </div>
+                                    
+                                    <div class="row mb-4">
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-medium text-secondary">Your Phone No.</label>
+                                            <input type="tel" class="form-control" placeholder="98761-89035">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-medium text-secondary">Your Email</label>
+                                            <input type="email" class="form-control" placeholder="john@abymo.com">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <label class="form-label fw-medium text-secondary">Your Institute/School Name</label>
+                                        <input type="text" class="form-control" placeholder="Indian Institute of Technology, Roorkee">
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <label class="form-label fw-medium text-secondary">Message</label>
+                                        <textarea class="form-control" rows="4" placeholder="Write your message here"></textarea>
+                                    </div>
+                                    
+                                    <div class="pt-2">
+                                        <button type="submit button" class="btn bg-custom-green custom-button text-white p-0">
+                                            <img src="images/Group 427327192.png" alt="Send"> 
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--Frame 15-->
+  <!-- Desktop-->
+    <div class="container mt-5 ">
+        <h2 class="fw-medium fs-1 text-secondary mb-4">You may also like</h2>
+        <div class="row d-flex flex-nowrap justify-content-between align-items-stretch overflow-x-auto g-4">
+            <div class="col text-center pe-2">
+                <img src="images/Ethanol Sensor.png" alt="background" class="img-fluid mb-3">
+                <p class="d-flex align-items-center justify-content-end gap-1 frame15text">
+                    Ethanol Sensor<img src="images/Group 427327208.png" alt="arrow">
+                </p>
+            </div>
+            <div class="col text-center pe-2">
+                <img src="images/CO.png" alt="" class="img-fluid mb-3">
+                <p class="d-flex align-items-center justify-content-end gap-2 frame15text">
+                    CO Sensor <img src="images/Group 427327208.png" alt="arrow">
+                </p>
+            </div>
+            <div class="col text-center pe-2">
+                <img src="images/CO2 (1).png" alt="" class="img-fluid mb-3">
+                <p class="d-flex align-items-center justify-content-end gap-2 frame15text">
+                    CO2 Sensor <img src="images/Group 427327208.png" alt="arrow">
+                </p>
+            </div>
+            <div class="col text-center pe-2">
+                <img src="images/NO2.png" alt="" class="img-fluid mb-3">
+                <p class="d-flex align-items-center justify-content-end gap-2 frame15text">
+                    NO2 Sensor <img src="images/Group 427327208.png" alt="arrow">
+                </p>
+            </div>
+            <div class="col text-center pe-2">
+                <img src="images/CO2 (2).png" alt="" class="img-fluid mb-3">
+                <p class="d-flex align-items-center justify-content-end gap-2 frame15text">
+                    CO2 Sensor <img src="images/Group 427327208.png" alt="arrow">
+                </p>
+            </div>
+            <div class="col text-center pe-2">
+                <img src="images/NO2 (1).png" alt="" class="img-fluid mb-3">
+                <p class="d-flex align-items-center justify-content-end gap-2 frame15text">
+                    NO2 Sensor <img src="images/Group 427327208.png" alt="arrow">
+                </p>
+            </div>
+            <div class="col text-center pe-2">
+                <img src="images/NO2 (2).png" alt="" class="img-fluid mb-3">
+                <p class="d-flex align-items-center justify-content-end gap-2 frame15text">
+                    NO2 Sensor <img src="images/Group 427327208.png" alt="arrow">
+                </p>
+            </div>
+        </div>
+    </div>  
+
+<!--Frame 16 Footer-->
+<!-- Footer Section -->
+    <footer class="bg-custom-dark text-secondary footerutil">
+        <div class="container-fluid ">
+            <img src="images/Group 427322971.png" alt="Logo" class="mb-5" style="width: 88px; height: 68px;">
+            
+            <div class="row">
+                <!-- Quick Links -->
+                <div class="col-md-5">
+                    <div class="row">
+                        <div class="col-md-4 col-6 mb-4">
+                            <h6 class="text-white-50 fw-semibold mb-3">Quick Links</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">Home</li>
+                                <li class="mb-2">About Us</li>
+                                <li class="mb-2">Contact Us</li>
+                                <li class="mb-2">FAQs</li>
+                                <li class="mb-2">Blogs</li>
+                                <li class="mb-2">Shop</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-4 col-6 mb-4">
+                            <h6 class="text-white-50 fw-semibold mb-3">Prana Air Products</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">Air Monitors</li>
+                                <li class="mb-2">Air Sensors</li>
+                                <li class="mb-2">Air Drone</li>
+                                <li class="mb-2">Weather Station</li>
+                                <li class="mb-2">PCB Board</li>
+                                <li class="mb-2">Fresh Air Machine</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-4 col-12 mb-4">
+                            <h6 class="text-white-50 fw-semibold mb-3">Other Links</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">Air Solutions</li>
+                                <li class="mb-2">Data Accuracy</li>
+                                <li class="mb-2">Case Study</li>
+                                <li class="mb-2">Manuals</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="col-md-7">
+                    <div class="bg-custom-darker p-4 rounded-4">
+                        <div class="row">
+                            <div class="col-md-4 col-12 mb-4 " >
+                                <h6 class="text-white fw-semibold mb-3 border-bottom border-secondary pb-3">India Office</h6>
+                                <ul class="list-unstyled text-white mt-4">
+                                    <li class="mb-3">✉ Email:<br> <span class="text-light-green">info@purelogic.in</span></li>
+                                    <li class="mb-3">📞 Phone:<br> <span class="text-light-green">+91 7391873918</span></li>
+                                    <li>📍 Address:<br> <span class="text-light-green">Crown Heights, 7th Floor, 706, Rohini Sec-10, Delhi-110085, India</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-4 mb-4 desktop d-md-block d-none" >
+                                <h6 class="text-white fw-semibold mb-3 border-bottom border-secondary pb-3">USA Office</h6>
+                                <ul class="list-unstyled text-white mt-4">
+                                    <li class="mb-3">📞 Phone: <br><span class="text-light-green">+1 612 2992 211</span></li>
+                                    <li>📍 Address: <br><span class="text-light-green">Prana Air (USA)<br> 1240 2nd street south unit 629, Minneapolis, MN 55415</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-4 desktop d-md-block d-none">
+                                <h6 class="text-white fw-semibold mb-3 border-bottom border-secondary pb-3">
+                                    UK Office
+                                </h6>
+                                <ul class="list-unstyled text-white mt-4">
+                                    <li class="mb-3">📞 Phone:<br> <span class="text-light-green">+44 203 633 1234</span></li>
+                                    <li>📍 Address:<br> <span class="text-light-green">Prana Air (UK) PAE5uk LTD 76 <br>Thorold road, Ilford, IG1 4EX</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="text-end mt-4">
+                <p class="d-inline-block me-3">find us on:</p>
+                <a href="https://www.youtube.com/c/PranaAir" class="text-secondary me-3"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.linkedin.com/company/pranaair" class="text-secondary me-3"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/prana.air/" class="text-secondary me-3"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/airprana" class="text-secondary"><i class="fab fa-facebook-f"></i></a>
+            </div>
+
+            <!-- Copyright and Policies -->
+            <div class="row align-items-center mt-4 pt-4 border-top border-secondary">
+                <div class="col-md-4">
+                    <!-- <p class="mb-0">© 2024 — Copyright Prana Air</p> -->
+                </div>
+                <div class="col-md-8">
+                    <div class="d-flex justify-content-end gap-4">
+                        <span class="me-5">© 2024 — Copyright Prana Air</span>
+                        <span>Terms & Conditions</span>
+                        <span>Privacy Policy</span>
+                        <span>Return Policy</span>
+                        <span>Shipping Policy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+      <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Frame  Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $(".owl-carousel").owlCarousel({
+      //items: 4,              // Number of items per slide
+      loop: false,            // Infinite loop
+      margin: 10,            // Space between items
+      nav: true,             // Show next/prev buttons
+      dots: false,            // Show dots below
+      autoplay: false,        // Enable autoplay
+      autoplayTimeout: 3000,  // Time between slides (ms)
+      responsive: {
+                    0: {
+                      items: 2      // Mobile phones
+                    },
+                    480: {
+                      items: 2      // Large mobile phones
+                    },
+                    768: {
+                      items: 3      // Tablets
+                    },
+                    1024: {
+                      items: 4      // Desktop
+                    }
+                  }
+    });
+  });
+</script>
+
+
+</body>
+</html>

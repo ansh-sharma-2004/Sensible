@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POND.AI Navigation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <style>
+  .section1 {
+    position: relative;
+    background: url('Frame 1.png') center center / cover no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+
+  .section-gradient {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+    z-index: 1;
+  }
+
+.price{
+    color: rgba(122, 178, 97, 1);
+
+}
+
+  .section-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+/* Mobile-specific overrides */
+@media (max-width: 767.98px) {
+  .section1 {
+    background: url('Rectangle 34625983.png') center center / cover no-repeat;  /* Change to mobile image */
+    display: flex;
+    align-items: flex-end;  /* Move content to bottom */
+    padding-bottom: 2rem;   /* Optional spacing from bottom */
+  }
+
+  .section-gradient {
+    top: auto;   /* Remove top:0 */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Full width gradient on mobile */
+    height: 50%; /* Gradient covers bottom half */
+    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
+  }
+
+  .section-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+</style>
+
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-2" style="height: 62px; position: relative ; z-index: 5;">
+  <div class="container">
+    <!-- Logo (Always Visible) -->
+    <a href="/" class="navbar-brand d-flex align-items-center me-4">
+      <img src="images/Navbar Logo.png" alt="PranaAir Logo" width="60" class="me-2">
+    </a>
+
+    <!-- Mobile Toggle Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+      <div class="d-flex flex-column flex-lg-row align-items-end align-items-lg-center w-100 gap-3">
+
+        <!-- Center: Menu -->
+        <ul class="navbar-nav flex-column flex-lg-row gap-2 gap-lg-3 ms-auto text-center">
+          <!-- Dropdowns -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle mx-auto" href="#" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Solutions</a>
+            <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="solutionsDropdown">
+              <li><a class="dropdown-item text-center" href="#">Solution 1</a></li>
+              <li><a class="dropdown-item text-center" href="#">Solution 2</a></li>
+              <li><a class="dropdown-item text-center" href="#">Solution 3</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle mx-auto" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+            <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="productsDropdown">
+              <li><a class="dropdown-item text-center" href="#">Product 1</a></li>
+              <li><a class="dropdown-item text-center" href="#">Product 2</a></li>
+              <li><a class="dropdown-item text-center" href="#">Product 3</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle mx-auto" href="#" id="caseStudiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Case Studies</a>
+            <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="caseStudiesDropdown">
+              <li><a class="dropdown-item text-center" href="#">Case Study 1</a></li>
+              <li><a class="dropdown-item text-center" href="#">Case Study 2</a></li>
+              <li><a class="dropdown-item text-center" href="#">Case Study 3</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle mx-auto" href="#" id="knowWhatDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Know What</a>
+            <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="knowWhatDropdown">
+              <li><a class="dropdown-item text-center" href="#">Resource 1</a></li>
+              <li><a class="dropdown-item text-center" href="#">Resource 2</a></li>
+              <li><a class="dropdown-item text-center" href="#">Resource 3</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle mx-auto" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+            <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="aboutDropdown">
+              <li><a class="dropdown-item text-center" href="#">About Us</a></li>
+              <li><a class="dropdown-item text-center" href="#">Team</a></li>
+              <li><a class="dropdown-item text-center" href="#">Careers</a></li>
+            </ul>
+          </li>
+
+          <!-- Right: Buttons and Dropdowns (Stacked on small, inline on lg) -->
+          <li class="mt-2 mt-lg-0 mx-auto"><a href="#" class="btn btn-success rounded-pill px-4" style="width: 140px;">Get in touch</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle d-flex align-items-center justify-content-center" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-globe me-1"></i> Global
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="languageDropdown">
+              <li><a class="dropdown-item text-center" href="#">English</a></li>
+              <li><a class="dropdown-item text-center" href="#">Spanish</a></li>
+              <li><a class="dropdown-item text-center" href="#">French</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-center" href="#" id="currencyDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">USD ($)</a>
+            <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="currencyDropdown">
+              <li><a class="dropdown-item text-center" href="#">USD ($)</a></li>
+              <li><a class="dropdown-item text-center" href="#">EUR (€)</a></li>
+              <li><a class="dropdown-item text-center" href="#">GBP (£)</a></li>
+            </ul>
+          </li>
+          <!--Shopping Cart Icon-->
+          <li class="mx-auto my-auto">
+            <a href="#" class="position-relative">
+              <i class="bi bi-cart3 fs-5"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">1</span>
+            </a>
+          </li>
+          <li class="mx-auto my-auto"><a href="#" class="text-decoration-none text-success">Login</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</nav>
+  <!-- Page Content -->
+<div class="section1">
+  <!-- Left half gradient overlay -->
+  <div class="section-gradient">
+
+  </div>
+
+  <!-- Content sits on top -->
+  <div class="container section-content">
+    <div class="row align-items-center ">
+      <!-- Left Column -->
+      <div class="col-md-4 text-center text-md-start">
+        <div class="desktop-text d-none d-md-block">
+            <h1 class="display-5 fw-semibold m-0">Sensible+ </h1>
+            <h1 class="display-5 fw-semibold mb-3"> Air Monitor</h1>
+            <p class="mb-3">
+                An intelligent, portable indoor air monitor that helps you stay informed about the air you breathe.
+            </p>
+            <div class="price fs-4 fw-semibold mb-4">
+                ₹69,990.00
+            </div>
+                <a href="#">
+                <img src="images/Group 427327217.png" alt="Buy Now" class="img-fluid" style="max-width: 180px;">
+                </a>
+        </div>
+        <div class="mobile-text d-block d-md-none">
+            <h1 class="display-5 fw-semibold m-0">
+                A handy little indoor air monitor that's super smart!
+            </h1>
+        <p class="mb-3">
+          Keep track of indoor air quality along-with ambient indoor & outdoor pollutant
+        </p>
+        <div class="price fs-4 fw-semibold mb-4">₹69,990.00</div>
+        <a href="#">
+          <img src="images/Group 427327217.png" alt="Buy Now" class="img-fluid" style="max-width: 180px;">
+        </a>
+        </div>
+      </div>
+      <div class="col-md-3">
+       
+      </div>
+      <!-- Right Column -->
+      <div class="col-md-6">
+        <!-- Optional: Right-side content/image -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

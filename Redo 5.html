@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Navbar Example</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    .navbar .nav-link {
+      color: #333;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+    }
+    
+    .navbar .dropdown-toggle::after {
+      vertical-align: middle;
+    }
+    
+    .btn-success {
+      background-color: #5cb85c;
+      border-color: #5cb85c;
+    }
+    
+    .btn-success:hover {
+      background-color: #4cae4c;
+      border-color: #4cae4c;
+    }
+    
+    .text-success {
+      color: #5cb85c !important;
+    }
+    
+    .bg-success {
+      background-color: #5cb85c !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-2"
+  style="height: 62px;">
+    <div class="container">
+      <!-- Logo -->
+      <a href="/" class="navbar-brand d-flex align-items-center">
+        <img src="images/Navbar Logo.png" alt="PranaAir Logo" width="60"  class="me-2">
+      </a>
+
+      <!-- Mobile Toggle Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Content -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <!-- Center Menu Items -->
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <!-- Solutions Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Solutions
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="solutionsDropdown">
+              <li><a class="dropdown-item" href="#">Solution 1</a></li>
+              <li><a class="dropdown-item" href="#">Solution 2</a></li>
+              <li><a class="dropdown-item" href="#">Solution 3</a></li>
+            </ul>
+          </li>
+
+          <!-- Products Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Products
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+              <li><a class="dropdown-item" href="#">Product 1</a></li>
+              <li><a class="dropdown-item" href="#">Product 2</a></li>
+              <li><a class="dropdown-item" href="#">Product 3</a></li>
+            </ul>
+          </li>
+
+          <!-- Case Studies Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="caseStudiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Case Studies
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="caseStudiesDropdown">
+              <li><a class="dropdown-item" href="#">Case Study 1</a></li>
+              <li><a class="dropdown-item" href="#">Case Study 2</a></li>
+              <li><a class="dropdown-item" href="#">Case Study 3</a></li>
+            </ul>
+          </li>
+
+          <!-- Know What Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="knowWhatDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Know What
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="knowWhatDropdown">
+              <li><a class="dropdown-item" href="#">Resource 1</a></li>
+              <li><a class="dropdown-item" href="#">Resource 2</a></li>
+              <li><a class="dropdown-item" href="#">Resource 3</a></li>
+            </ul>
+          </li>
+
+          <!-- About Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              About
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <li><a class="dropdown-item" href="#">About Us</a></li>
+              <li><a class="dropdown-item" href="#">Team</a></li>
+              <li><a class="dropdown-item" href="#">Careers</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Right Side Elements -->
+        <div class="d-flex align-items-center gap-3">
+          <!-- CTA Button -->
+          <a href="#" class="btn btn-success rounded-pill px-4 " style="width: 140px;;">
+            Get in touch
+          </a>
+
+          <!-- Language Selector -->
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-globe me-1"></i> Global
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+              <li><a class="dropdown-item" href="#">English</a></li>
+              <li><a class="dropdown-item" href="#">Spanish</a></li>
+              <li><a class="dropdown-item" href="#">French</a></li>
+            </ul>
+          </div>
+
+          <!-- Currency Selector -->
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="currencyDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              USD ($)
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="currencyDropdown">
+              <li><a class="dropdown-item" href="#">USD ($)</a></li>
+              <li><a class="dropdown-item" href="#">EUR (€)</a></li>
+              <li><a class="dropdown-item" href="#">GBP (£)</a></li>
+            </ul>
+          </div>
+
+          <!-- Shopping Cart -->
+          <a href="#" class="position-relative me-3">
+            <i class="bi bi-cart fs-5"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+              1
+            </span>
+          </a>
+
+          <!-- Login Link -->
+          <a href="#" class="text-decoration-none text-success">
+            Login
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+    <div style="background-image: url('Frame 1.png'); background-size: cover; min-height: 786px;">
+        <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-6 text-white">
+                    <h1 style="margin-left: 105px; margin-top: 270px; width: 255; height: 100;">Sensible+ Air Monitor</h1>
+                    <p style="margin-left: 105px;">An intelligent, portable indoor air monitor that helps you stay informed about the air you breathe.</p>
+                    <div class="price pb-4 "style="margin-left: 105px;">₹69,990.00</div>
+                    <button class="btn btn-success" style="margin-left: 120px; border: radius 6px;">Buy Now</button>
+                </div>
+                <div class="col-md-6">
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="container-fluid" style="height: 61px;">
+            <div class="row"style="height: 61px;">
+                <div class="col-md-6 " style="background-color:  #7AB261;  ">
+                    <div class="d-flex align-items-center text-white" style="height: 61px; margin-left: 165px;">
+                        <img src="images/sensible + 2.png" alt="icon" style="width: 75px; height: 44px;">
+                        <span>Sensible+ ₹59,000.00</span>
+                    <div class="h-auto w-auto ml-400">    
+                        <img src="images/Diagonal Arrow.png" alt="icon" style="width: 29px; height: 29px; display: flex; margin-left: 225px;">
+                    </div>                    
+                    </div>
+
+                </div>
+                <div class="col-md-6"style="background-color: #6C81A352; ">
+                    <div class="d-flex align-items-center text-[#263D4FCC]" style="height: 61px; margin-left: 165px;">
+                            <img src="images/sensible + 2.png" alt="icon" style="width: 75px; height: 44px;">
+                            <span>Sensible+ ₹59,000.00</span>
+                        <div class="h-auto w-auto ">    
+                            <img src="images/Black Diagonal Arrow.png" alt="icon" style="  width: 29px; height: 29px; display: flex; margin-left: 225px;">
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+    </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>

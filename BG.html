@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Background Methods</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .custom-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 200px;
+        }
+        
+        .image-bg {
+            background-image: url('https://picsum.photos/800/400');
+            background-size: cover;
+            background-position: center;
+            min-height: 300px;
+        }
+        
+        .pattern-bg {
+            background-image: 
+                radial-gradient(circle at 25px 25px, rgba(255,255,255,.2) 2px, transparent 2px),
+                radial-gradient(circle at 75px 75px, rgba(255,255,255,.2) 2px, transparent 2px);
+            background-size: 100px 100px;
+            background-color: #4a90e2;
+            min-height: 200px;
+        }
+        
+        .overlay-bg {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://picsum.photos/800/400');
+            background-size: cover;
+            background-position: center;
+            min-height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid py-4">
+        <h1 class="text-center mb-5">Bootstrap Background Methods</h1>
+        
+        <!-- Method 1: Bootstrap Background Colors -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h3>1. Bootstrap Background Color Classes</h3>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="bg-primary text-white p-3 rounded">
+                    <h5>Primary</h5>
+                    <p class="mb-0">bg-primary</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="bg-success text-white p-3 rounded">
+                    <h5>Success</h5>
+                    <p class="mb-0">bg-success</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="bg-warning text-dark p-3 rounded">
+                    <h5>Warning</h5>
+                    <p class="mb-0">bg-warning</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="bg-info text-white p-3 rounded">
+                    <h5>Info</h5>
+                    <p class="mb-0">bg-info</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Method 2: Gradient Backgrounds -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h3>2. Bootstrap Gradient Classes</h3>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="bg-primary bg-gradient text-white p-4 rounded">
+                    <h5>Primary Gradient</h5>
+                    <p class="mb-0">bg-primary bg-gradient</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="bg-success bg-gradient text-white p-4 rounded">
+                    <h5>Success Gradient</h5>
+                    <p class="mb-0">bg-success bg-gradient</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Method 3: Custom CSS Gradient -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h3>3. Custom CSS Gradient Background</h3>
+                <div class="custom-bg text-white p-4 rounded d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                        <h4>Custom Gradient</h4>
+                        <p class="mb-0">Using custom CSS with linear-gradient</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+<nav style="position: sticky; top: 0; left: 0; right:0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <div style="display: flex; width:100%; margin: 0 auto;">
+            
+            <!-- Left Column - Green -->
+             <button onclick="selectPlan('sensible')" style="background: #4CAF50; flex: 1; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; position: relative; border: none; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='#45a049'" onmouseout="this.style.background='#4CAF50'">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="color: white; display: flex; align-items: center; gap: 8px;">
+                        <!-- REPLACE THIS SPAN WITH YOUR FIRST BUTTON ICON -->
+                        <img src="images/sensible + 2.png" alt="Icon" style="width: 16px; height: 16px; object-fit: cover;">
+                        <!-- OR keep the emoji: <span>🌟</span> -->
+                        <span style="font-size: 14px;">Sensible +</span>
+                        <span style="font-weight: bold; font-size: 14px;">₹ 59,000.00</span>
+                    </div>
+                </div>
+                
+                <!-- Right Arrow for Green Button -->
+                <div style="color: white; font-size: 16px; font-weight: bold;">→</div>
+            </button>
+            
+            <!-- Right Button - White -->
+            <button onclick="selectPlan('sensible-advance')" style="background: white; flex: 1; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; position: relative; border: none; border-left: 1px solid #e0e0e0; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='white'">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <!-- REPLACE THIS SPAN WITH YOUR SECOND BUTTON ICON -->
+                    <img src="images/Sensible+ fr.png" alt="Icon" style="width: 16px; height: 16px; object-fit: cover;">
+                    <!-- OR keep the emoji: <span>🇮🇳</span> -->
+                    <span style="font-size: 14px; color: #333;">Sensible + Advance</span>
+                    <span style="font-weight: bold; font-size: 14px; color: #333;">₹ 69,000.00</span>
+                </div>
+                
+                <!-- Right Arrow for White Button -->
+                <div style="color: #333; font-size: 16px; font-weight: bold;">→</div>
+            </button>
+            
+        </div>
+    </nav>
+
+        <!-- Method 4: Image Background -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h3>4. Image Background</h3>
+                <div class="image-bg rounded d-flex align-items-center justify-content-center">
+                    <div class="text-center text-white">
+                        <h4 class="text-shadow">Image Background</h4>
+                        <p class="mb-0">background-image with cover</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Method 5: Pattern Background -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h3>5. Pattern Background</h3>
+                <div class="pattern-bg text-white p-4 rounded d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                        <h4>Pattern Background</h4>
+                        <p class="mb-0">CSS radial-gradient pattern</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Method 6: Image with Overlay -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h3>6. Image Background with Overlay</h3>
+                <div class="overlay-bg rounded d-flex align-items-center justify-content-center">
+                    <div class="text-ce

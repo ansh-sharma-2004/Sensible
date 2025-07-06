@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Navbar Example</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    .navbar .nav-link {
+      color: #333;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+    }
+    
+    .navbar .dropdown-toggle::after {
+      vertical-align: middle;
+    }
+    
+    .btn-success {
+      background-color: #5cb85c;
+      border-color: #5cb85c;
+    }
+    
+    .btn-success:hover {
+      background-color: #4cae4c;
+      border-color: #4cae4c;
+    }
+    
+    .text-success {
+      color: #5cb85c !important;
+    }
+    
+    .bg-success {
+      background-color: #5cb85c !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-2">
+    <div class="container">
+      <!-- Logo -->
+      <a href="/" class="navbar-brand d-flex align-items-center">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-uf7XfjXf1ZImTMgugwlDSAFdgB9sqT.png" alt="Pricing AI Logo" width="100" height="30" class="me-2">
+      </a>
+
+      <!-- Mobile Toggle Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Content -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <!-- Center Menu Items -->
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <!-- Solutions Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Solutions
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="solutionsDropdown">
+              <li><a class="dropdown-item" href="#">Solution 1</a></li>
+              <li><a class="dropdown-item" href="#">Solution 2</a></li>
+              <li><a class="dropdown-item" href="#">Solution 3</a></li>
+            </ul>
+          </li>
+
+          <!-- Products Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Products
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+              <li><a class="dropdown-item" href="#">Product 1</a></li>
+              <li><a class="dropdown-item" href="#">Product 2</a></li>
+              <li><a class="dropdown-item" href="#">Product 3</a></li>
+            </ul>
+          </li>
+
+          <!-- Case Studies Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="caseStudiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Case Studies
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="caseStudiesDropdown">
+              <li><a class="dropdown-item" href="#">Case Study 1</a></li>
+              <li><a class="dropdown-item" href="#">Case Study 2</a></li>
+              <li><a class="dropdown-item" href="#">Case Study 3</a></li>
+            </ul>
+          </li>
+
+          <!-- Know What Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="knowWhatDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Know What
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="knowWhatDropdown">
+              <li><a class="dropdown-item" href="#">Resource 1</a></li>
+              <li><a class="dropdown-item" href="#">Resource 2</a></li>
+              <li><a class="dropdown-item" href="#">Resource 3</a></li>
+            </ul>
+          </li>
+
+          <!-- About Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              About
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <li><a class="dropdown-item" href="#">About Us</a></li>
+              <li><a class="dropdown-item" href="#">Team</a></li>
+              <li><a class="dropdown-item" href="#">Careers</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Right Side Elements -->
+        <div class="d-flex align-items-center gap-3">
+          <!-- CTA Button -->
+          <a href="#" class="btn btn-success rounded-pill px-4">
+            Get in touch
+          </a>
+
+          <!-- Language Selector -->
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-globe me-1"></i> Global
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+              <li><a class="dropdown-item" href="#">English</a></li>
+              <li><a class="dropdown-item" href="#">Spanish</a></li>
+              <li><a class="dropdown-item" href="#">French</a></li>
+            </ul>
+          </div>
+
+          <!-- Currency Selector -->
+          <div class="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="currencyDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              USD ($)
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="currencyDropdown">
+              <li><a class="dropdown-item" href="#">USD ($)</a></li>
+              <li><a class="dropdown-item" href="#">EUR (€)</a></li>
+              <li><a class="dropdown-item" href="#">GBP (£)</a></li>
+            </ul>
+          </div>
+
+          <!-- Shopping Cart -->
+          <a href="#" class="position-relative me-3">
+            <i class="bi bi-cart fs-5"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+              1
+            </span>
+          </a>
+
+          <!-- Login Link -->
+          <a href="#" class="text-decoration-none text-success">
+            Login
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container mt-5">
+    <h1>Welcome to Pricing AI</h1>
+    <p>This is a sample page with the navigation bar you requested.</p>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>

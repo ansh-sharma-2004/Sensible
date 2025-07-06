@@ -1,0 +1,99 @@
+<div class="container-fluid h-auto w-auto mb-5">
+  <div class="row g-0">
+    <!-- Tablet Text Column -->
+    <div class="col-12 col-md-5" style="background-color: rgba(10, 21, 6, 1);">
+      <div class="text-white">
+        <p style="width: 100%; max-width: 454px;
+          padding: 111px 0 124px 106px;
+          font-family: Nunito Sans;
+          font-weight: 500;
+          font-size: 40px;
+          line-height: 46px;
+          letter-spacing: -3%;
+          vertical-align: middle;">
+          <span style="color: rgba(122, 178, 97, 1);">Parameters</span> Sensible+ Measures for You
+        </p>
+
+        <!-- Responsive List -->
+        <ul class="d-flex flex-wrap justify-content-center gap-3 px-3" style="list-style: none; margin: 0;">
+          <!-- Each List Item -->
+          <li style="width: 264px; height: 91px; padding: 2px 2px 0 2px; background: linear-gradient(135deg, rgba(10, 21, 6, 0), rgba(10, 21, 6, 1)); border-radius: 14px 14px 0 0;">
+            <div style="width: 100%; height: 100%; padding: 15px; background: rgba(255,255,255,0.05); color: white; border-radius: 12px 12px 0 0; display: flex; align-items: center; gap: 15px; backdrop-filter: blur(43.64px); font-family: 'Nunito Sans'; font-weight: 600; font-size: 18px; line-height: 24px;">
+              <img src="PARTICLE COUNT (0.5).svg" alt="PM Icon" style="width: 46px; height: 46px;">
+              <div>Particulate Matter<br>(PM1, PM10, PM2.5)</div>
+            </div>
+          </li>
+
+          <li style="width: 240px; height: 91px; padding: 2px; background: linear-gradient(135deg, rgba(10, 21, 6, 0), rgba(10, 21, 6, 1)); border-radius: 14px 14px 0 0;">
+            <div style="width: 100%; height: 100%; padding: 15px; background: rgba(255,255,255,0.05); color: white; border-radius: 12px 12px 0 0; display: flex; align-items: center; gap: 15px; backdrop-filter: blur(43.64px); font-family: 'Nunito Sans'; font-weight: 600; font-size: 18px; line-height: 24px;">
+              <img src="CO2.png" alt="CO2 Icon" style="width: 55px; height: 55px;">
+              <div>Carbon Dioxide<br>(CO₂)</div>
+            </div>
+          </li>
+
+          <li style="width: 264px; height: 91px; padding: 2px; background: linear-gradient(135deg, rgba(10, 21, 6, 0), rgba(10, 21, 6, 1)); border-radius: 14px 14px 0 0;">
+            <div style="width: 100%; height: 100%; padding: 15px 10px; background: rgba(255,255,255,0.05); color: white; border-radius: 12px 12px 0 0; display: flex; align-items: center; gap: 5px; backdrop-filter: blur(43.64px); font-family: 'Nunito Sans'; font-weight: 600; font-size: 18px; line-height: 24px;">
+              <img src="TVOC.svg" alt="TVOC Icon" style="width: 55px; height: 55px;">
+              <div>Total Volatile Organic Compounds(TVOC)</div>
+            </div>
+          </li>
+
+          <li style="width: 240px; height: 91px; padding: 2px; background: linear-gradient(135deg, rgba(10, 21, 6, 0), rgba(10, 21, 6, 1)); border-radius: 14px 14px 0 0;">
+            <div style="width: 100%; height: 100%; padding: 15px; background: rgba(255,255,255,0.05); color: white; border-radius: 12px 12px 0 0; display: flex; align-items: center; gap: 15px; backdrop-filter: blur(43.64px); font-family: 'Nunito Sans'; font-weight: 600; font-size: 18px; line-height: 24px;">
+              <img src="HCHO.png" alt="HCHO Icon" style="width: 55px; height: 55px;">
+              <div>Formaldehyde<br>(HCHO)</div>
+            </div>
+          </li>
+
+          <li style="width: 264px; height: 91px; padding: 2px; background: linear-gradient(135deg, rgba(10, 21, 6, 0), rgba(10, 21, 6, 1)); border-radius: 14px 14px 0 0;">
+            <div style="width: 100%; height: 100%; padding: 15px; background: rgba(255,255,255,0.05); color: white; border-radius: 12px 12px 0 0; display: flex; align-items: center; gap: 15px; backdrop-filter: blur(43.64px); font-family: 'Nunito Sans'; font-weight: 600; font-size: 18px; line-height: 24px;">
+              <img src="TEMPERATURE.png" alt="Temperature Icon" style="width: 55px; height: 55px;">
+              <div>Temperature</div>
+            </div>
+          </li>
+
+          <li style="width: 240px; height: 91px; padding: 2px; background: linear-gradient(135deg, rgba(10, 21, 6, 0), rgba(10, 21, 6, 1)); border-radius: 14px 14px 0 0;">
+            <div style="width: 100%; height: 100%; padding: 15px; background: rgba(255,255,255,0.05); color: white; border-radius: 12px 12px 0 0; display: flex; align-items: center; gap: 15px; backdrop-filter: blur(43.64px); font-family: 'Nunito Sans'; font-weight: 600; font-size: 18px; line-height: 24px;">
+              <img src="Humidity.png" alt="Humidity Icon" style="width: 55px; height: 55px;">
+              <div>Humidity</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Tablet Image Column -->
+    <div class="col-12 col-md-7">
+      <div style="position: relative; overflow: hidden;">
+        <img src='sensible+ ad.png' alt='Device' style="width: 100%; height: 100%;">
+
+        <!-- Gradient Overlay -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;
+          background: radial-gradient(ellipse at center, transparent 0%, rgba(10, 21, 6, 1) 100%)">
+        </div>
+
+        <!-- Floating Button -->
+        <a href="#" style="position: absolute; top: 122px; right: 162px;">
+          <img src="Group 427327217.png" alt="Buy">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="container h-auto" style="margin: 0 105px 0 105px ; border: 1px solid rgba(38, 61, 79, 0.13);" >
+      <p style="font-family: Nunito Sans;
+                  font-weight: 500;
+                  font-size: 32px;
+                  line-height: 40px;
+                  letter-spacing: -3%;
+                  vertical-align: middle;
+                  color: rgba(38, 61, 79, 1); margin: 51px 0 24px 68px;">
+          Sensible+ Delivers BAM-Level Accuracy
+      </p>
+      <!--Graph-->
+      <div>
+          <img src="Group 427327193.png" alt="Graph" style="width: 100%; height: auto;">
+      </div>
+  </div>

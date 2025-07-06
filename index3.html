@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prana Air - Smart Indoor Air Quality Monitor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'prana-green': '#7CB342',
+                        'prana-dark': '#2D3748'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white">
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobileMenu" class="fixed inset-0 z-50 hidden">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black bg-opacity-50" onclick="closeMobileMenu()"></div>
+        
+        <!-- Menu Panel -->
+        <div class="absolute right-0 top-0 h-full w-80 bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out" id="menuPanel">
+            <div class="p-6">
+                <!-- Header -->
+                <div class="flex items-center justify-between mb-8">
+                    <img src="images/prana-air-logo-iqbJwbg4LsjFPc9bYz3kftbIq06Ual.webp" alt="Prana Air Logo" class="h-8 w-auto">
+                    <button onclick="closeMobileMenu()" class="p-2 text-gray-600 hover:text-gray-800">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Menu Items -->
+                <nav class="space-y-4">
+                    <div class="border-b border-gray-100 pb-4">
+                        <button class="flex items-center justify-between w-full text-left text-gray-800 hover:text-prana-green py-2">
+                            <span class="font-medium">Solutions</span>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="border-b border-gray-100 pb-4">
+                        <button class="flex items-center justify-between w-full text-left text-gray-800 hover:text-prana-green py-2">
+                            <span class="font-medium">Products</span>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="border-b border-gray-100 pb-4">
+                        <button class="flex items-center justify-between w-full text-left text-gray-800 hover:text-prana-green py-2">
+                            <span class="font-medium">Case Studies</span>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="border-b border-gray-100 pb-4">
+                        <button class="flex items-center justify-between w-full text-left text-gray-800 hover:text-prana-green py-2">
+                            <span class="font-medium">Know What</span>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="border-b border-gray-100 pb-4">
+                        <button class="flex items-center justify-between w-full text-left text-gray-800 hover:text-prana-green py-2">
+                            <span class="font-medium">About</span>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- Get in touch button -->
+                    <div class="pt-4">
+                        <button class="w-full bg-prana-green text-white px-6 py-3 rounded-full text-center font-medium hover:bg-green-600 transition-colors">
+                            Get in touch
+                        </button>
+                    </div>
+                    
+                    <!-- Mobile Currency Dropdown -->
+                    <div class="border-b border-gray-100 pb-4">
+                        <button onclick="toggleMobileCurrencyDropdown()" class="flex items-center justify-between w-full text-left text-gray-800 hover:text-prana-green py-2">
+                            <span class="font-medium" id="selectedMobileCurrency">INR, ₹</span>
+                            <svg class="w-4 h-4 transition-transform duration-200" id="mobileCurrencyArrow" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                        </button>
+                        
+                        <!-- Mobile Currency Dropdown Menu -->
+                        <div id="mobileCurrencyDropdown" class="hidden mt-2 ml-4 space-y-2">
+                            <button onclick="selectMobileCurrency('INR', '₹')" class="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:text-prana-green">
+                                INR, ₹
+                            </button>
+                            <button onclick="selectMobileCurrency('USD', '$')" class="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:text-prana-green">
+                                USD, $
+                            </button>
+                            <button onclick="selectMobileCurrency('EUR', '€')" class="block w-full text-left px-4 py-2 text-sm text-gray-600 hover:text-prana-green">
+                                EUR, €
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Global/Language Dropdown -->
+                    <div class="border-b border-gray-100 pb-4">
+                        <button onclick="toggleMobileLanguageDropdown()" class="flex items-center justify-between w-full text-left text-gray-800 hover:text-prana-green py-2">
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="font-medium" id="selectedMobileLanguage">Global</span>
+                            </div>
+                            <svg class="w-4 h-4 transition-transform duration-200" id="mobileLanguageArrow" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                        </button>
+                        
+                        <!-- Mobile Language Dropdown Menu -->
+                        <div id="mobileLanguageDropdown" class="hidden mt-2 ml-4 space-y-2 max-h-48 overflow-y-auto">
+                            <button onclick="selectMobileLanguage('Hindi', 'in')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-600 hover:text-prana-green">
+                                <i class="flag-icon flag-icon-in w-4 h-3"></i>
+                                <span>Hindi</span>
+                            </button>
+                            <button onclick="selectMobileLanguage('French', 'fr')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-600 hover:text-prana-green">
+                                <i class="flag-icon flag-icon-fr w-4 h-3"></i>
+                                <span>French</span>
+                            </button>
+                            <button onclick="selectMobileLanguage('Russian', 'ru')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-600 hover:text-prana-green">
+                                <i class="flag-icon flag-icon-ru w-4 h-3"></i>
+                                <span>Russian</span>
+                            </button>
+                            <button onclick="selectMobileLanguage('German', 'de')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-600 hover:text-prana-green">
+                                <i class="flag-icon flag-icon-de w-4 h-3"></i>
+                                <span>German</span>
+                            </button>
+                            <button onclick="selectMobileLanguage('Spanish', 'es')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-600 hover:text-prana-green">
+                                <i class="flag-icon flag-icon-es w-4 h-3"></i>
+                                <span>Spanish</span>
+                            </button>
+                            <button onclick="selectMobileLanguage('Japanese', 'jp')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-600 hover:text-prana-green">
+                                <i class="flag-icon flag-icon-jp w-4 h-3"></i>
+                                <span>Japanese</span>
+                            </button>
+                            <button onclick="selectMobileLanguage('US English', 'us')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-600 hover:text-prana-green">
+                                <i class="flag-icon flag-icon-us w-4 h-3"></i>
+                                <span>US English</span>
+                            </button>
+                            <button onclick="selectMobileLanguage('Portuguese', 'pt')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-600 hover:text-prana-green">
+                                <i class="flag-icon flag-icon-pt w-4 h-3"></i>
+                                <span>Portuguese</span>
+                            </button>
+                            <button onclick="selectMobileLanguage('IND English', 'in')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-600 hover:text-prana-green">
+                                <i class="flag-icon flag-icon-in w-4 h-3"></i>
+                                <span>IND English</span>
+                            </button>
+                            <button onclick="selectMobileLanguage('UK English', 'gb')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-600 hover:text-prana-green">
+                                <i class="flag-icon flag-icon-gb w-4 h-3"></i>
+                                <span>UK English</span>
+                            </button>
+                            <button onclick="selectMobileLanguage('Canada English', 'ca')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-600 hover:text-prana-green">
+                                <i class="flag-icon flag-icon-ca w-4 h-3"></i>
+                                <span>Canada English</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Login -->
+                    <div class="pt-2">
+                        <button class="text-prana-green hover:text-green-600 font-medium">
+                            Login
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-100 relative z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex items-center space-x-2">
+                        <img src="images/prana-air-logo-iqbJwbg4LsjFPc9bYz3kftbIq06Ual.webp" alt="Prana Air Logo" class="h-10 w-auto">
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <div class="flex items-center space-x-1 text-gray-700 hover:text-prana-green cursor-pointer">
+                        <span>Solutions</span>
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="flex items-center space-x-1 text-gray-700 hover:text-prana-green cursor-pointer">
+                        <span>Products</span>
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="flex items-center space-x-1 text-gray-700 hover:text-prana-green cursor-pointer">
+                        <span>Case Studies</span>
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="flex items-center space-x-1 text-gray-700 hover:text-prana-green cursor-pointer">
+                        <span>Know What</span>
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="flex items-center space-x-1 text-gray-700 hover:text-prana-green cursor-pointer">
+                        <span>About</span>
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                </nav>
+
+                <!-- Desktop Actions -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <button class="bg-prana-green text-white px-4 py-2 rounded-3xl text-sm font-medium hover:bg-green-600 transition-colors">
+                        Get in touch
+                    </button>
+                    
+                    <!-- Desktop Global/Language Dropdown -->
+                    <div class="relative" onmouseenter="showLanguageDropdown()" onmouseleave="hideLanguageDropdown()">
+                        <div class="flex items-center space-x-1 text-gray-700 hover:text-prana-green cursor-pointer">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm" id="selectedLanguage">Global</span>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- Desktop Language Dropdown Menu -->
+                        <div id="languageDropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 hidden z-50 max-h-64 overflow-y-auto">
+                            <div class="py-1">
+                                <button onclick="selectLanguage('Hindi', 'in')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-prana-green">
+                                    <i class="flag-icon flag-icon-in w-4 h-3"></i>
+                                    <span>Hindi</span>
+                                </button>
+                                <button onclick="selectLanguage('French', 'fr')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-prana-green">
+                                    <i class="flag-icon flag-icon-fr w-4 h-3"></i>
+                                    <span>French</span>
+                                </button>
+                                <button onclick="selectLanguage('Russian', 'ru')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-prana-green">
+                                    <i class="flag-icon flag-icon-ru w-4 h-3"></i>
+                                    <span>Russian</span>
+                                </button>
+                                <button onclick="selectLanguage('German', 'de')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-prana-green">
+                                    <i class="flag-icon flag-icon-de w-4 h-3"></i>
+                                    <span>German</span>
+                                </button>
+                                <button onclick="selectLanguage('Spanish', 'es')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-prana-green">
+                                    <i class="flag-icon flag-icon-es w-4 h-3"></i>
+                                    <span>Spanish</span>
+                                </button>
+                                <button onclick="selectLanguage('Japanese', 'jp')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-prana-green">
+                                    <i class="flag-icon flag-icon-jp w-4 h-3"></i>
+                                    <span>Japanese</span>
+                                </button>
+                                <button onclick="selectLanguage('US English', 'us')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-prana-green">
+                                    <i class="flag-icon flag-icon-us w-4 h-3"></i>
+                                    <span>US English</span>
+                                </button>
+                                <button onclick="selectLanguage('Portuguese', 'pt')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-prana-green">
+                                    <i class="flag-icon flag-icon-pt w-4 h-3"></i>
+                                    <span>Portuguese</span>
+                                </button>
+                                <button onclick="selectLanguage('IND English', 'in')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-prana-green">
+                                    <i class="flag-icon flag-icon-in w-4 h-3"></i>
+                                    <span>IND English</span>
+                                </button>
+                                <button onclick="selectLanguage('UK English', 'gb')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-prana-green">
+                                    <i class="flag-icon flag-icon-gb w-4 h-3"></i>
+                                    <span>UK English</span>
+                                </button>
+                                <button onclick="selectLanguage('Canada English', 'ca')" class="flex items-center space-x-3 w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-prana-green">
+                                    <i class="flag-icon flag-icon-ca w-4 h-3"></i>
+                                    <span>Canada English</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Currency Dropdown -->
+                    <div class="relative">
+                        <button onclick="toggleCurrencyDropdown()" class="flex items-center space-x-1 text-gray-700 hover:text-prana-green cursor-pointer">
+                            <span class="text-sm" id="selectedCurrency">USD,$</span>
+                            <svg class="w-4 h-4 transition-transform duration-200" id="currencyArrow" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                        </button>
+                        
+                        <!-- Dropdown Menu -->
+                        <div id="currencyDropdown" class="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg border border-gray-200 hidden z-50">
+                            <div class="py-1">
+                                <button onclick="selectCurrency('INR', '₹')" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-prana-green">
+                                    INR, ₹
+                                </button>
+                                <button onclick="selectCurrency('USD', '$')" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-prana-green">
+                                    USD, $
+                                </button>
+                                <button onclick="selectCurrency('EUR', '€')" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-prana-green">
+                                    EUR, €
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5-6m0 0L4 5M7 13h10m0 0v6a1 1 0 01-1 1H8a1 1 0 01-1-1v-6m10 0V9a1 1 0 00-1-1H8a1 1 0 00-1 1v4"/>
+                        </svg>
+                        <span class="absolute -top-2 -right-2 bg-prana-green text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </div>
+                    <button class="text-gray-700 hover:text-prana-green text-sm font-medium">Login</button>
+                </div>
+
+                <!-- Mobile Actions -->
+                <div class="lg:hidden flex items-center space-x-4">
+                    <div class="relative">
+                        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 6M7 13l-1.5-6m0 0L4 5M7 13h10m0 0v6a1 1 0 01-1 1H8a1 1 0 01-1-1v-6m10 0V9a1 1 0 00-1-1H8a1 1 0 00-1 1v4"/>
+                        </svg>
+                        <span class="absolute -top-2 -right-2 bg-prana-green text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </div>
+                    <div class="flex items-center space-x-1 text-gray-700">
+                        <span class="text-sm" id="mobileHeaderCurrency">INR</span>
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <button onclick="openMobileMenu()" class="text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="relative min-h-screen">
+        <!-- Background Images - Responsive -->
+        <div class="absolute inset-0 z-0">
+          <!-- Desktop Background -->
+          <div class="hidden lg:block absolute inset-0">
+            <img src="images/product.png" alt="Indoor air quality monitor on wooden desk with laptop" class="w-full h-full object-cover">
+          </div>
+          
+          <!-- Mobile Background -->
+          <div class="lg:hidden absolute inset-0">
+            <img src="images/productonmobile.png" alt="Close-up view of air quality monitor device" class="w-full h-full object-cover object-contain">
+          </div>
+        </div>
+
+        <!-- Linear Gradient Overlay -->
+        <div class="absolute inset-0 z-5 bg-gradient-to-r from-black/80 via-black/50 to-transparent lg:bg-gradient-to-r lg:from-black/70 lg:via-black/40 lg:to-black/20"></div>
+        
+        <!-- Content Overlay -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-32">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen lg:min-h-0">
+                <!-- Mobile Product Image -->
+                <div class="flex justify-center lg:hidden order-1 lg:order-2">
+                    <div class="relative">
+                        <img src="images/sensiblepro.png" alt="Prana Air Quality Monitor Device" class="w-64 sm:w-80 lg:w-96 h-auto object-cover transform translate-y-1/2">
+                    </div>
+                </div>
+               
+                <!-- Text Content -->
+                <div class="text-white order-2 lg:order-1">
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 lg:mb-6">
+                        <span class="hidden lg:block font-normal font-sans pt-10">Your Smart Solution</span>
+                        <span class="hidden lg:block font-normal font-sans">for Indoor Air Quality</span>
+                        <span class="lg:hidden font-medium">A handy little indoor air monitor that's super smart!</span>
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg lg:text-xl text-gray-200 mb-6 lg:mb-8 max-w-lg">
+                        <span class="hidden lg:block font-medium">A compact indoor air monitor designed to keep you informed about the air you breathe—anytime, anywhere.</span>
+                        <span class="lg:hidden font-medium">Keep track of indoor air quality along with ambient indoor & outdoor pollutant</span>
+                    </p>
+                    
+                    <div class="mb-6 lg:mb-8">
+                        <span class="text-2xl lg:text-3xl font-bold text-green-400" id="priceDisplay">₹59,990.00</span>
+                    </div>
+                    
+                    <button class="bg-prana-green hover:bg-green-600 text-white px-6 lg:px-8 py-3 rounded-md font-semibold text-base lg:text-lg transition-colors duration-200 flex items-center space-x-2">
+                        <span>Buy Now</span>
+                        <svg class="w-4 h-4 lg:w-5 lg:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Desktop Product Image -->
+                <div class="hidden lg:flex justify-center order-2">
+                    <div class="relative">
+                        <img src="images/sensiblepro.png" alt="Prana Air Quality Monitor Device" class="w-96 h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Features Section - Updated to match the image -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                <!-- Main Feature Card - Left Side -->
+                <div class="lg:row-span-2 bg-white rounded-2xl shadow-lg p-8 flex flex-col justify-center items-center text-center border border-gray-200">
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-2">Sensible</h2>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-2">Monitor</h2>
+                        <h2 class="text-3xl font-bold text-prana-green">Features</h2>
+                    </div>
+                    <button class="bg-prana-green hover:bg-green-600 text-white px-8 py-3 rounded-full font-semibold text-lg transition-colors duration-200 flex items-center space-x-2 shadow-lg">
+                        <span>Buy Now</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Feature Cards - Right Side Grid -->
+                <!-- Real-Time AQI Data -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-lg font-bold text-gray-800 leading-tight">Real-Time AQI Data</h3>
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 ml-4">
+                            <svg class="w-6 h-6 text-prana-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">Get instant readings for PM2.5, PM10, CO, CO2, O3, HCHO and TVOCs.</p>
+                </div>
+
+                <!-- Historical Data & Trends -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-lg font-bold text-gray-800 leading-tight">Historical Data & Trends</h3>
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 ml-4">
+                            <svg class="w-6 h-6 text-prana-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">Hourly, daily and monthly charts reveal patterns and improvements.</p>
+                </div>
+
+                <!-- Portable & Battery-Powered -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-lg font-bold text-gray-800 leading-tight">Portable & Battery-Powered</h3>
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 ml-4">
+                            <svg class="w-6 h-6 text-prana-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">Lightweight design lets you monitor any room or workspace.</p>
+                </div>
+
+                <!-- Onboard Data Storage -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-lg font-bold text-gray-800 leading-tight">Onboard Data Storage</h3>
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 ml-4">
+                            <svg class="w-6 h-6 text-prana-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">Micro SD card holds months of readings for easy access.</p>
+                </div>
+
+                <!-- Built-In Display & Alerts -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-lg font-bold text-gray-800 leading-tight">Built-In Display & Alerts</h3>
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 ml-4">
+                            <svg class="w-6 h-6 text-prana-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">Color-coded warnings and clear health tips help you take action.</p>
+                </div>
+
+                <!-- Type-C USB Powered -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-start justify-between mb-4">
+                        <h3 class="text-lg font-bold text-gray-800 leading-tight">Type-C USB Powered</h3>
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 ml-4">
+                            <svg class="w-6 h-6 text-prana-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-10 0a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">Simple plug-and-play setup— built-in battery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-8">
+                What Technology is Used in Sensible ?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Technology cards can be added here -->
+                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+                    <div class="w-16 h-16 bg-prana-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Advanced Sensors</h3>
+                    <p class="text-sm text-gray-600">High-precision sensors for accurate air quality measurements</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+                    <div class="w-16 h-16 bg-prana-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">IoT Connectivity</h3>
+                    <p class="text-sm text-gray-600">Smart connectivity for remote monitoring and control</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+                    <div class="w-16 h-16 bg-prana-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">AI Analytics</h3>
+                    <p class="text-sm text-gray-600">Intelligent data analysis for actionable insights</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Currency data with conversion rates (example rates)
+        const currencyData = {
+            'INR': { symbol: '₹', rate: 1, price: '59,990.00' },
+            'USD': { symbol: '$', rate: 0.012, price: '719.88' },
+            'EUR': { symbol: '€', rate: 0.011, price: '659.89' }
+        };
+
+        let currentCurrency = 'USD';
+        let currentLanguage = 'Global';
+
+        // Desktop Currency Functions
+        function toggleCurrencyDropdown() {
+            const dropdown = document.getElementById('currencyDropdown');
+            const arrow = document.getElementById('currencyArrow');
+            
+            dropdown.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
+        }
+
+        function selectCurrency(currency, symbol) {
+            currentCurrency = currency;
+            const selectedCurrencyElement = document.getElementById('selectedCurrency');
+            const priceDisplay = document.getElementById('priceDisplay');
+            
+            // Update the currency display
+            selectedCurrencyElement.textContent = `${currency}, ${symbol}`;
+            
+            // Update the price
+            const currencyInfo = currencyData[currency];
+            priceDisplay.textContent = `${currencyInfo.symbol}${currencyInfo.price}`;
+            
+            // Close the dropdown
+            toggleCurrencyDropdown();
+        }
+
+        // Mobile Currency Functions
+        function toggleMobileCurrencyDropdown() {
+            const dropdown = document.getElementById('mobileCurrencyDropdown');
+            const arrow = document.getElementById('mobileCurrencyArrow');
+            
+            dropdown.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
+        }
+
+        function selectMobileCurrency(currency, symbol) {
+            const selectedMobileCurrencyElement = document.getElementById('selectedMobileCurrency');
+            const mobileHeaderCurrency = document.getElementById('mobileHeaderCurrency');
+            const priceDisplay = document.getElementById('priceDisplay');
+            
+            // Update the mobile currency display
+            selectedMobileCurrencyElement.textContent = `${currency}, ${symbol}`;
+            mobileHeaderCurrency.textContent = currency;
+            
+            // Update the price
+            const currencyInfo = currencyData[currency];
+            priceDisplay.textContent = `${currencyInfo.symbol}${currencyInfo.price}`;
+            
+            // Close the dropdown
+            toggleMobileCurrencyDropdown();
+        }
+
+        // Desktop Language Functions
+        function showLanguageDropdown() {
+            const dropdown = document.getElementById('languageDropdown');
+            dropdown.classList.remove('hidden');
+        }
+
+        function hideLanguageDropdown() {
+            const dropdown = document.getElementById('languageDropdown');
+            dropdown.classList.add('hidden');
+        }
+
+        function selectLanguage(language, countryCode) {
+            currentLanguage = language;
+            const selectedLanguageElement = document.getElementById('selectedLanguage');
+            selectedLanguageElement.textContent = language;
+            
+            // Here you can add logic to actually change the website language
+            console.log(`Language changed to: ${language} (${countryCode})`);
+        }
+
+        // Mobile Language Functions
+        function toggleMobileLanguageDropdown() {
+            const dropdown = document.getElementById('mobileLanguageDropdown');
+            const arrow = document.getElementById('mobileLanguageArrow');
+            
+            dropdown.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
+        }
+
+        function selectMobileLanguage(language, countryCode) {
+            currentLanguage = language;
+            const selectedMobileLanguageElement = document.getElementById('selectedMobileLanguage');
+            selectedMobileLanguageElement.textContent = language;
+            
+            // Close the dropdown
+            toggleMobileLanguageDropdown();
+            
+            // Here you can add logic to actually change the website language
+            console.log(`Language changed to: ${language} (${countryCode})`);
+        }
+
+        function openMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const panel = document.getElementById('menuPanel');
+            
+            menu.classList.remove('hidden');
+            setTimeout(() => {
+                panel.classList.remove('translate-x-full');
+            }, 10);
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const panel = document.getElementById('menuPanel');
+            
+            panel.classList.add('translate-x-full');
+            setTimeout(() => {
+                menu.classList.add('hidden');
+            }, 300);
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const currencyDropdown = document.getElementById('currencyDropdown');
+            const currencyButton = event.target.closest('[onclick="toggleCurrencyDropdown()"]');
+            
+            if (!currencyButton && !currencyDropdown.contains(event.target)) {
+                currencyDropdown.classList.add('hidden');
+                document.getElementById('currencyArrow').classList.remove('rotate-180');
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Prana Air website loaded');
+        });
+    </script>
+
+    <!-- Add flag-icon CSS for better flag display -->
+    <style>
+        .flag-icon {
+            background-size: contain;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            position: relative;
+            display: inline-block;
+            width: 1.33333333em;
+            line-height: 1em;
+        }
+        .flag-icon:before {
+            content: "\00a0";
+        }
+        .flag-icon-in {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 3'%3E%3Cpath fill='%23ff9933' d='M0 0h4v1H0z'/%3E%3Cpath fill='%23fff' d='M0 1h4v1H0z'/%3E%3Cpath fill='%23138808' d='M0 2h4v1H0z'/%3E%3Ccircle cx='2' cy='1.5' r='.3' fill='%23000080'/%3E%3C/svg%3E");
+        }
+        .flag-icon-us {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7410 3900'%3E%3Cpath fill='%23b22234' d='M0 0h7410v3900H0z'/%3E%3Cpath stroke='%23fff' stroke-width='300' d='M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0'/%3E%3Cpath fill='%233c3b6e' d='M0 0h2964v2100H0z'/%3E%3C/svg%3E");
+        }
+        .flag-icon-fr {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='%23002395' d='M0 0h1v2H0z'/%3E%3Cpath fill='%23fff' d='M1 0h1v2H1z'/%3E%3Cpath fill='%23ed2939' d='M2 0h1v2H2z'/%3E%3C/svg%3E");
+        }
+        .flag-icon-de {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 3'%3E%3Cpath d='M0 0h5v3H0z'/%3E%3Cpath fill='%23d00' d='M0 1h5v2H0z'/%3E%3Cpath fill='%23ffce00' d='M0 2h5v1H0z'/%3E%3C/svg%3E");
+        }
+        .flag-icon-es {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='%23aa151b' d='M0 0h3v2H0z'/%3E%3Cpath fill='%23f1bf00' d='M0 .5h3v1H0z'/%3E%3C/svg%3E");
+        }
+        .flag-icon-ru {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='%23fff' d='M0 0h3v2H0z'/%3E%3Cpath fill='%230039a6' d='M0 .67h3v1.33H0z'/%3E%3Cpath fill='%23d52b1e' d='M0 1.33h3V2H0z'/%3E%3C/svg%3E");
+        }
+        .flag-icon-jp {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='%23fff' d='M0 0h3v2H0z'/%3E%3Ccircle cx='1.5' cy='1' r='.6' fill='%23bc002d'/%3E%3C/svg%3E");
+        }
+        .flag-icon-pt {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Cpath fill='%23046a38' d='M0 0h1.2v2H0z'/%3E%3Cpath fill='%23da020e' d='M1.2 0H3v2H1.2z'/%3E%3C/svg%3E");
+        }
+        .flag-icon-gb {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Cpath fill='%23012169' d='M0 0h60v30H0z'/%3E%3Cpath stroke='%23fff' stroke-width='6' d='m0 0 60 30m0-30L0 30'/%3E%3Cpath stroke='%23c8102e' stroke-width='4' d='m0 0 60 30m0-30L0 30'/%3E%3Cpath stroke='%23fff' stroke-width='10' d='M30 0v30M0 15h60'/%3E%3Cpath stroke='%23c8102e' stroke-width='6' d='M30 0v30M0 15h60'/%3E%3C/svg%3E");
+        }
+        .flag-icon-ca {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600'%3E%3Cpath fill='%23f00' d='M0 0h300v600H0zm900 0h300v600H900z'/%3E%3Cpath fill='%23fff' d='M300 0h600v600H300z'/%3E%3Cpath fill='%23f00' d='M540 180l30-24 30 24-12-39 30-24h-36l-12-39-12 39h-36l30 24z'/%3E%3C/svg%3E");
+        }
+
+        /* Custom z-index for gradient overlay */
+        .z-5 {
+            z-index: 5;
+        }
+    </style>
+</body>
+</html>
+

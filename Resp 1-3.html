@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POND.AI Navigation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+  <style>
+  /* .section1 {
+    position: relative;
+    background: url('Frame 1.png') center center / cover no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+
+  .section-gradient {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+    z-index: 1;
+  }
+  .section-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  } */
+
+.price{
+    color: rgba(122, 178, 97, 1);
+}
+
+
+  .gradient-text {
+  background: linear-gradient(180deg, #263D4F 0%, rgba(38, 61, 79, 0.43) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sensible+frr {
+  max-width: 300px;
+  width: 100%;
+}
+  .feature-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* Frame 4 */
+
+.frame4border{
+  border: 0.71px solid;
+  background: linear-gradient(360deg, rgba(10, 21, 6, 0) 0%, #0A1506 100%);
+  background: linear-gradient(180deg, rgba(242, 247, 239, 0.08) 0%, rgba(242, 247, 239, 0) 100%);
+  border-radius: 11px;
+  border-bottom: none;
+}
+.frame4ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  align-items: center;
+  padding:0 2% 0 8%; 
+  list-style: none;
+  gap: 20px;
+}
+.frame4icon{
+  width: 46px;
+  height: auto;
+  object-fit: contain;
+}
+.frame4li{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width:48%;
+  height: auto;
+  padding: 15px 5px;
+}
+
+/* Mobile-specific overrides */
+@media (max-width: 767.98px) {
+
+.frame4ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  align-items: center;
+  padding: 0; 
+  list-style: none;
+  gap: 5px;
+}
+.frame4icon{
+  width: 40px;
+  height: auto;
+  object-fit: contain;
+}
+.frame4li{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  width:48%;
+  height: auto;
+  padding: 15px 5px;
+  font-size: 12px;
+}
+
+  .navbar-collapse {
+    background-color: rgba(255, 255, 255, 0.95); /* white with transparency */
+    padding: 1rem;
+    z-index: 1001;
+  }
+
+  .navbar-nav .nav-link {
+    color: #000; /* Make sure links are readable on white background */
+  }
+
+  .dropdown-menu {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: none;
+  }
+
+  .dropdown-menu .dropdown-item {
+    color: #000; /* Text color for dropdown items */
+  }
+
+
+
+
+  /* .section1 {
+    background: url('Rectangle 34625983.png') center center / cover no-repeat;
+    display: flex;
+    align-items: flex-end; 
+    padding-bottom: 2rem;   
+    
+  }
+
+  .section-gradient {
+    top: auto;   
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    height: 50%; 
+    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
+  }
+
+  .section-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  } */
+}
+
+</style> 
+
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-2" style="height: 62px;">
+  <div class="container">
+    <!-- Logo (Always Visible) -->
+    <a href="/" class="navbar-brand d-flex align-items-center me-4">
+      <img src="images/Navbar Logo.png" alt="PranaAir Logo" width="60" class="me-2">
+    </a>
+
+    <!-- Mobile Toggle Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+      <div class="d-flex flex-column flex-lg-row align-items-end align-items-lg-center w-100 gap-3">
+
+        <!-- Center: Menu -->
+        <ul class="navbar-nav flex-column flex-lg-row gap-2 gap-lg-3 ms-auto text-center">
+          <!-- Dropdowns -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle mx-auto" href="#" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Solutions</a>
+            <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="solutionsDropdown">
+              <li><a class="dropdown-item text-center" href="#">Solution 1</a></li>
+              <li><a class="dropdown-item text-center" href="#">Solution 2</a></li>
+              <li><a class="dropdown-item text-center" href="#">Solution 3</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle mx-auto" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+            <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="productsDropdown">
+              <li><a class="dropdown-item text-center" href="#">Product 1</a></li>
+              <li><a class="dropdown-item text-center" href="#">Product 2</a></li>
+              <li><a class="dropdown-item text-center" href="#">Product 3</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle mx-auto" href="#" id="caseStudiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Case Studies</a>
+            <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="caseStudiesDropdown">
+              <li><a class="dropdown-item text-center" href="#">Case Study 1</a></li>
+              <li><a class="dropdown-item text-center" href="#">Case Study 2</a></li>
+              <li><a class="dropdown-item text-center" href="#">Case Study 3</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle mx-auto" href="#" id="knowWhatDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Know What</a>
+            <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="knowWhatDropdown">
+              <li><a class="dropdown-item text-center" href="#">Resource 1</a></li>
+              <li><a class="dropdown-item text-center" href="#">Resource 2</a></li>
+              <li><a class="dropdown-item text-center" href="#">Resource 3</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle mx-auto" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+            <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="aboutDropdown">
+              <li><a class="dropdown-item text-center" href="#">About Us</a></li>
+              <li><a class="dropdown-item text-center" href="#">Team</a></li>
+              <li><a class="dropdown-item text-center" href="#">Careers</a></li>
+            </ul>
+          </li>
+
+          <!-- Right: Buttons and Dropdowns (Stacked on small, inline on lg) -->
+          <li class="mt-2 mt-lg-0 mx-auto"><a href="#" class="btn btn-success rounded-pill px-4" style="width: 140px;">Get in touch</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle d-flex align-items-center justify-content-center" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-globe me-1"></i> Global
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="languageDropdown">
+              <li><a class="dropdown-item text-center" href="#">English</a></li>
+              <li><a class="dropdown-item text-center" href="#">Spanish</a></li>
+              <li><a class="dropdown-item text-center" href="#">French</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-center" href="#" id="currencyDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">USD ($)</a>
+            <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="currencyDropdown">
+              <li><a class="dropdown-item text-center" href="#">USD ($)</a></li>
+              <li><a class="dropdown-item text-center" href="#">EUR (€)</a></li>
+              <li><a class="dropdown-item text-center" href="#">GBP (£)</a></li>
+            </ul>
+          </li>
+          <!--Shopping Cart Icon-->
+          <li class="mx-auto my-auto">
+            <a href="#" class="position-relative">
+              <i class="bi bi-cart3 fs-5"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">1</span>
+            </a>
+          </li>
+          <li class="mx-auto my-auto"><a href="#" class="text-decoration-none text-success">Login</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</nav>
+  <!-- Page Content -->
+<div class="section1">
+  <!-- Left half gradient overlay -->
+  <div class="section-gradient">
+
+  </div>
+
+  <!-- Content sits on top -->
+  <div class="container section-content">
+    <div class="row align-items-center ">
+      <!-- Left Column -->
+      <div class="col-md-4 text-center text-md-start">
+        <div class="desktop-text d-none d-md-block">
+            <h1 class="display-5 fw-semibold m-0">Sensible+ </h1>
+            <h1 class="display-5 fw-semibold mb-3"> Air Monitor</h1>
+            <p class="mb-3">
+                An intelligent, portable indoor air monitor that helps you stay informed about the air you breathe.
+            </p>
+            <div class="price fs-4 fw-semibold mb-4">
+                ₹69,990.00
+            </div>
+                <a href="#">
+                <img src="images/Group 427327217.png" alt="Buy Now" class="img-fluid" style="max-width: 180px;">
+                </a>
+        </div>
+        <div class="mobile-text d-block d-md-none">
+            <h1 class="display-5 fw-semibold m-0">
+                A handy little indoor air monitor that's super smart!
+            </h1>
+        <p class="mb-3">
+          Keep track of indoor air quality along-with ambient indoor & outdoor pollutant
+        </p>
+        <div class="price fs-4 fw-semibold mb-4">₹69,990.00</div>
+        <a href="#">
+          <img src="images/Group 427327217.png" alt="Buy Now" class="img-fluid" style="max-width: 180px;">
+        </a>
+        </div>
+      </div>
+      <!-- <div class="col-md-3">
+       
+      </div> -->
+      <!-- Right Column -->
+      <div class="col-md-6">
+        <!-- Optional: Right-side content/image -->
+      </div>
+    </div>
+  </div>
+</div>
+<!--Frame 2-->
+<div class="container py-5">
+  <!--Desktop Heading -->
+  <div class="desktop-text d-none d-md-block">
+    <h2 class="fw-medium mb-4 " style=" max-width: 30%;  font-family: 'Nunito Sans', sans-serif; font-size: 2.5rem; line-height: 1.2;">
+      What Makes Sensible+ Smart
+    </h2>
+  </div>
+<!--Mobile Heading-->
+  <div class="mobile-text d-block d-md-none">
+    <h2 class="fw-medium p-4" style="width:80%; font-family: 'Nunito Sans', sans-serif; font-size: 2rem; line-height: 1.2; ">
+      Features about the air monitor
+    </h2>
+  </div>
+
+  <div class="row g-0 align-items-stretch mb-0">
+    <div class="col-lg-6 bg-light p-4 d-flex flex-column flex-md-row align-items-center ">
+      <div>
+        <img src="images/Sensible+ frr.png" class="img-fluid sensible+frr mb-md-0 pe-md-3" alt="Sensible+">
+      </div>
+      <div class="text-center text-md-start">
+        <p class="fw-bold gradient-text" style="font-size: 1.75rem; color: #263D4F; font-family: 'Nunito Sans', sans-serif;">Sensible + Advance</p>
+        <a href="#">
+          <img src="images/Group 427327218.png" alt="Buy Now" class="img-fluid" style="max-width: 180px;">
+        </a>
+      </div>
+    </div>
+
+    <div class="col-6   col-lg-3">
+      <div class="bg-light h-100 p-3 border rounded d-flex flex-column">
+        <img src="images/Group.png" class="mb-3 feature-icon" alt="Real-Time Data">
+        <h5 class="fw-semibold" style="color: #263D4F; font-family: 'Nunito Sans', sans-serif;">Real-Time Data</h5>
+        <p class="text-muted" style="font-family: 'Open Sans', sans-serif;">Track real-time air quality hourly, weekly, and monthly.</p>
+      </div>
+    </div>
+
+    <div class="col-6 col-lg-3">
+      <div class="bg-light h-100 p-3 border rounded d-flex flex-column">
+        <img src="images/Group 2.png" class="mb-3 feature-icon" alt="Battery">
+        <h5 class="fw-semibold" style="color: #263D4F; font-family: 'Nunito Sans', sans-serif;">5000 mAh Inbuilt Battery</h5>
+        <p class="text-muted" style="font-family: 'Open Sans', sans-serif;">Long battery life for long and reliable screen time.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-0 mb-0">
+    <div class="col-6 col-lg-3">
+      <div class="bg-light h-100 p-3 border rounded d-flex flex-column">
+        <img src="images/Group 3.png" class="mb-3 feature-icon" alt="Micro SD">
+        <h5 class="fw-semibold" style="color: #263D4F; font-family: 'Nunito Sans', sans-serif;">On-board Micro SD Card</h5>
+        <p class="text-muted" style="font-family: 'Open Sans', sans-serif;">Automatically logs and stores data locally on a MicroSD card.</p>
+      </div>
+    </div>
+
+    <div class="col-6 col-lg-3">
+      <div class="bg-light h-100 p-3 border rounded d-flex flex-column">
+        <img src="images/Group 4.png" class="mb-3 feature-icon" alt="Touch Screen">
+        <h5 class="fw-semibold" style="color: #263D4F; font-family: 'Nunito Sans', sans-serif;">7 inch Touch Screen</h5>
+        <p class="text-muted" style="font-family: 'Open Sans', sans-serif;">A bright and responsive display for smarter interaction.</p>
+      </div>
+    </div>
+
+    <div class="col-6 col-lg-3">
+      <div class="bg-light h-100 p-3 border rounded d-flex flex-column">
+        <img src="images/Group 5.png" class="mb-3 feature-icon" alt="Charging">
+        <h5 class="fw-semibold" style="color: #263D4F; font-family: 'Nunito Sans', sans-serif;">Micro USB Charging</h5>
+        <p class="text-muted" style="font-family: 'Open Sans', sans-serif;">Comes with a Type-C cable for faster, more efficient charging.</p>
+      </div>
+    </div>
+
+    <div class="col-6 col-lg-3">
+      <div class="bg-light h-100 p-3 border rounded d-flex flex-column">
+        <img src="images/Group 6.png" class="mb-3 feature-icon" alt="WiFi">
+        <h5 class="fw-semibold" style="color: #263D4F; font-family: 'Nunito Sans', sans-serif;">WiFi Connectivity</h5>
+        <p class="text-muted" style="font-family: 'Open Sans', sans-serif;">Ensure continuous smooth air quality data transmission anytime.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Frame 3 -->
+<div class="container my-5 px-4 py-5 rounded" style="background-color: rgba(231, 236, 242, 1);">
+  <div class="row gx-5 align-items-center flex-column-reverse flex-md-row">
+    <div class="col-md-6 mb-4 mb-md-0 d-flex flex-column">
+      <h2 class="fw-medium mb-3 fs-3" style="font-family: 'Nunito Sans', sans-serif; font-size: 1.75rem; line-height: 1.3; max-width: 70%; text-align: left;">
+        What Technology is Used in Sensible+?
+      </h2>
+      <div class="d-block d-md-none mb-3">
+        <img src="images/image 609.png" class="img-fluid" style="max-width: 100%; mix-blend-mode: multiply;" alt="Technology Illustration">
+      </div>
+      <p class="text-muted" style="font-family: 'Open Sans', sans-serif; font-size: 1rem; line-height: 1.5; max-width: 90%; text-align: left;">
+        Sensible+ uses advanced sensor technologies like electrochemical, catalytic, optical (NDIR, PID, metal oxide semiconductors), and spectroscopy to provide accurate, real-time air quality data. These technologies work in harmony to ensure that the data you receive is both reliable and actionable, helping you maintain cleaner, healthier indoor air.
+      </p>
+    </div>
+    <div class="col-md-6 mb-4 mb-md-0 d-none d-md-block">
+      <img src="images/image 609.png" class="img-fluid" style="max-width: 100%; mix-blend-mode: multiply;" alt="Technology Illustration">
+    </div>
+  </div>
+</div>
+
+<!--Frame 4-->
+<!-- Container with proper Bootstrap class -->
+<div class="container-fluid h-auto w-auto mb-0 p-0">
+  <div class="row g-0 flex-column flex-md-row ">
+    <!-- Tablet Image Column -->
+    <div class="col-12 col-md-7 order-1 order-md-2">
+      <div  style="position: relative; overflow: hidden;">
+        <!--Desktop Image-->
+        <div class="desktop d-none d-md-block">
+          <img src="images/sensible+ ad.png" alt="Device" style="width: 100%; height: auto;">
+        </div>
+        <!--Mobile Div-->
+        <div class="col-12 col-md-5 mobile d-block d-md-none" style="background-color: rgba(10, 21, 6, 1);">
+        <div class="position-relative">  
+          <div class="mx-auto text-white" 
+          style=" position: absolute; top: 20%; left: 10%;">
+            <h2>
+              <span style="color: rgba(122, 178, 97, 1);">Parameters</span> Sensible+ Measures for You
+            </h2>
+          </div>
+        </div>
+          <!--Mobile Image-->
+        <div class="mobile d-block d-md-none" style="background-color: rgba(10, 21, 6, 1);">
+          <img src="images/nknj 1.png" alt="Device" style="width: 98%; height: auto; padding-right: 2%;">
+        </div>
+        </div>
+        <!-- Gradient Overlay -->
+        <div class="desktop d-none d-md-block" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;
+          background: radial-gradient(ellipse at center, transparent 0%, rgba(10, 21, 6, 1) 100%)">
+        </div>
+         
+
+        <!-- Floating Button -->
+        <!--Desktop button-->
+        <div class="desktop d-none d-md-block">
+        <a href="#" style="position: absolute; top: 15%; right: 20%;">
+          <img src="images/Group 427327217.png" alt="Buy">
+        </a>
+        </div>  
+        <!--Mobile button-->
+        <div class="mobile d-block d-md-none d-flex justify-content-center">
+        <a href="#" style="position: absolute; bottom: 15%;">
+          <img src="images/Group 427327224 (1).png" alt="Buy">
+        </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tablet Text Column -->
+     <div class="col-12 col-md-5 order-2 order-md-1 pb-5  " style="background-color: rgba(10, 21, 6, 1);">
+      <div class="my-5 p-5 text-white desktop-text d-none d-md-block">
+        <h2>
+          <span style="color: rgba(122, 178, 97, 1);">Parameters</span> Sensible+ <br> Measures for You
+        </h2>
+      </div>
+
+        <!-- Responsive List -->
+      <div>
+          <ul class="frame4ul">
+            <!-- Each List Item -->
+            <li class="frame4border frame4li" > 
+              <div>    
+                <img src="images/PARTICLE COUNT (0.5).svg" alt="PM Icon" class="frame4icon">
+              </div>
+              <div class="text-white">
+                Particulate Matter<br>(PM1, PM10, PM2.5)
+              </div>
+            </li>
+
+            <li class="frame4border frame4li">
+              <div>    
+                <img src="images/CO2.png" alt="PM Icon" class="frame4icon">
+              </div>
+              <div class="text-white">
+                Carbon Di-<br>Oxide (CO2)
+              </div>
+            </li>
+
+            <li class="frame4border frame4li"> 
+              <div>    
+                <img src="images/TVOC.svg" alt="PM Icon" class="frame4icon">
+              </div>
+              <div class="text-white">
+                Total Volatile Organic <br> Compounds(TVOC)
+              </div>
+            </li>
+
+            <li class="frame4border frame4li"> 
+              <div>    
+                <img src="images/HCHO.png" alt="PM Icon" class="frame4icon">
+              </div>
+              <div class="text-white">
+                Formaldehyde<br> (HCHO)
+              </div>
+            </li>
+
+            <li class=" frame4li frame4border"> 
+              <div>    
+                <img src="images/TEMPERATURE.png" alt="PM Icon" class="frame4icon">
+              </div>
+              <div class="text-white">
+                Temperature
+              </div>
+            </li>
+
+            <li class="frame4li frame4border"> 
+              <div>    
+                <img src="images/Humidity.png" alt="PM Icon" class="frame4icon">
+              </div>
+              <div class="text-white">
+                Humidity
+              </div>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Frame 5 -->
+   <div class="frame5div">
+
+  <!-- Background image div -->
+    <div class="frame5bg"> 
+    </div>
+
+    <!-- Gradient overlay div -->
+    <div class="frame5gradient"
+    </div>
+
+    <div class="frame5content">
+      <!-- Desktop text -->
+      <p class="frame5text desktop-text d-none d-md-block">
+          Monitor What Matters. Breathe Better with Sensible+.
+      </p>
+      <!-- Mobile Text -->
+      <p class="frame5text mobile-text d-block d-md-none">
+          Smallest, Affordable & Portable Air Quality Monitor
+      </p>
+
+      <div>
+          <a href="#" >
+              <img src="images/Group 427327224 (1).png" alt="Buy">
+          </a>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Frame 6-->
+  <div class="container h-auto px-3" style="border: 1px solid rgba(38, 61, 79, 0.13); margin-top: 8%;" >
+      <div class="row">
+          <!--Left Text-->
+          <!--Desktop col-->
+          <div class="col-md-4 frame6border d-flex flex-column justify-content-center align-items-center 
+                      border border-0 border-end desktop d-none d-md-block">
+              <h2 class="frame6heading">
+                How Accurate is the Sensible+ Monitor?
+              </h2>
+              <div class="frame6text">
+                <p>
+                    Sensible+ delivers high-precision readings using advanced sensors calibrated against industry standards.
+                </p>
+                
+              </div>
+          </div>
+          <!--Mobile col-->
+          <div class="col-md-4 frame6border d-flex flex-column justify-content-center align-items-center 
+                      border border-0  mobile d-block d-md-none">
+              <h2 class="frame6heading">
+                How Accurate is the Sensible+ Monitor?
+              </h2>
+              <div class="frame6text">
+                <p>
+                  Comparison of our Sensible Monitor with other high-cost pollution monitors in real-time.
+                </p>
+                
+              </div>
+          </div>
+          <!--Right Images-->
+          <!-- desktop images -->
+          <div class="desktop d-none d-md-block  col-md-8 p-0 ">
+            <div class="frame6right ">
+                <img src="images/Figure → prana air sensible monitor data comparision.png" alt="Image 1" class="frame6image">
+                <img src="images/Figure → prana air sensible monitor data accuracy.png" alt="Image 2" class="frame6image">
+                <img src="images/Figure → prana air sensible monitor data comparision.png" alt="Image 3" class="frame6image">
+                <a href="#">
+                    <img src="images/Figure → prana air sensible monitor accuracy check (1).png" alt="Link" class="frame6image ">
+                </a>
+            </div>
+          </div>
+          <div class=" mobile d-block d-md-none col-md-8">
+            <div class="frame6right">
+                <img src="images/Figure → prana air sensible monitor data accuracy (1).png" alt="Image 1" class="frame6image">
+                <img src="images/Figure → prana air sensible monitor data comparision (1).png" alt="Image 2" class="frame6image">
+                <img src="images/Figure → prana air sensible monitor accuracy check (2).png" alt="Image 3" class="frame6image">
+                <a href="#">
+                    <img src="images/Figure → prana air sensible monitor accuracy check (3).png" alt="Link" class="frame6image">
+                </a>
+            </div>
+
+          </div>
+
+      </div>
+  </div>
+
+
+  <!-- Frame 7-->    
+  <div class="container h-auto frame7border" >
+      <p class="frame7heading ms-3 mt-5 text-start w-75">
+          Sensible+ Delivers BAM-Level Accuracy
+      
+      <!--Graph-->
+      <div>
+          <img src="images/Group 427327193.png" alt="Graph" style="width: 100%; height: auto;">
+      </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
